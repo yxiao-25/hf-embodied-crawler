@@ -1,0 +1,217 @@
+[
+  {
+    "model_id": "lerobot/smolvla_base",
+    "title": "lerobot/smolvla_base",
+    "description": "language: - en library_name: lerobot license: apache-2.0 pipeline_tag: robotics tags: - vision-language-action - imitation-learning - lerobot inference: false base_model: HuggingFaceTB/SmolVLM2-500M-V",
+    "tags": [
+      "lerobot",
+      "safetensors",
+      "vision-language-action",
+      "imitation-learning",
+      "robotics",
+      "en",
+      "arxiv:2506.01844",
+      "base_model:HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "base_model:finetune:HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "downloads": 124897,
+    "likes": 500,
+    "github_url": "https://github.com/huggingface/lerobot",
+    "space_url": "https://huggingface.co/spaces/lerobot/robot-learning-tutorial",
+    "keywords_matched": "vision-language-action,imitation-learning,lerobot,robot,robotics"
+  },
+  {
+    "model_id": "nvidia/Alpamayo-R1-10B",
+    "title": "nvidia/Alpamayo-R1-10B",
+    "description": "datasets: - nvidia/PhysicalAI-Autonomous-Vehicles - nvidia/PhysicalAI-Autonomous-Vehicles-NuRec pipeline_tag: robotics library_name: transformers license: openmdw-1.1 language: - en new_version: nvidi",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "alpamayo_r1",
+      "alpamayo",
+      "robotics",
+      "en",
+      "dataset:nvidia/PhysicalAI-Autonomous-Vehicles",
+      "dataset:nvidia/PhysicalAI-Autonomous-Vehicles-NuRec",
+      "arxiv:2511.00088",
+      "license:openmdw-1.1",
+      "endpoints_compatible",
+      "region:us"
+    ],
+    "downloads": 7158,
+    "likes": 447,
+    "github_url": "https://github.com/NVlabs/alpamayo",
+    "space_url": null,
+    "keywords_matched": "robot,robotics"
+  },
+  {
+    "model_id": "microsoft/Magma-8B",
+    "title": "microsoft/Magma-8B",
+    "description": "library_name: transformers license: mit pipeline_tag: robotics [Jianwei Yang](https://jwyang.github.io/)<sup</sup<sup1</sup<sup†</sup&nbsp; [Reuben Tan](https://cs-people.bu.edu/rxtan/)<sup1</sup<sup†",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "magma",
+      "text-generation",
+      "robotics",
+      "custom_code",
+      "arxiv:2502.13130",
+      "arxiv:2310.11441",
+      "license:mit",
+      "region:us",
+      "deploy:azure"
+    ],
+    "downloads": 924,
+    "likes": 425,
+    "github_url": "https://github.com/microsoft/Magma",
+    "space_url": "https://huggingface.co/spaces/microsoft/Magma-UI",
+    "keywords_matched": "robot,robotics"
+  },
+  {
+    "model_id": "nvidia/GR00T-N1-2B",
+    "title": "nvidia/GR00T-N1-2B",
+    "description": "datasets: - nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim tags: - robotics Github page: https://github.com/NVIDIA/Isaac-GR00T/ NVIDIA Isaac GR00T N1 is the world’s first open foundation model for ",
+    "tags": [
+      "safetensors",
+      "gr00t_n1",
+      "robotics",
+      "dataset:nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim",
+      "arxiv:2503.14734",
+      "arxiv:2501.14818",
+      "arxiv:2410.24164",
+      "eval-results",
+      "region:us"
+    ],
+    "downloads": 517,
+    "likes": 359,
+    "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
+    "space_url": null,
+    "keywords_matched": "robot,robotics"
+  },
+  {
+    "model_id": "lerobot/pi0_old",
+    "title": "lerobot/pi0_old",
+    "description": "license: apache-2.0 library_name: lerobot pipeline_tag: robotics This repository contains the model described in [π_0: A Vision-Language-Action Flow Model for General Robot Control](https://huggingfac",
+    "tags": [
+      "lerobot",
+      "safetensors",
+      "robotics",
+      "arxiv:2410.24164",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "downloads": 389,
+    "likes": 311,
+    "github_url": "https://github.com/huggingface/lerobot",
+    "space_url": "https://huggingface.co/spaces/lerobot/visualize_dataset?dataset=danaaubakirova%2Fkoch_test&episode=0",
+    "keywords_matched": "lerobot,robot,robotics"
+  },
+  {
+    "model_id": "openvla/openvla-7b",
+    "title": "openvla/openvla-7b",
+    "description": "library_name: transformers tags: - robotics - vla - image-text-to-text - multimodal - pretraining license: mit language: - en pipeline_tag: robotics OpenVLA 7B (openvla-7b) is an open vision-language-",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "openvla",
+      "feature-extraction",
+      "robotics",
+      "vla",
+      "image-text-to-text",
+      "multimodal",
+      "pretraining",
+      "custom_code",
+      "en",
+      "arxiv:2406.09246",
+      "license:mit",
+      "region:us"
+    ],
+    "downloads": 64854,
+    "likes": 267,
+    "github_url": "https://github.com/openvla/openvla",
+    "space_url": null,
+    "keywords_matched": "vla,robot,robotics"
+  },
+  {
+    "model_id": "nvidia/GR00T-N1.5-3B",
+    "title": "nvidia/GR00T-N1.5-3B",
+    "description": "datasets: - nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim tags: - robotics -- NVIDIA Isaac GR00T N1.5 is an open foundation model for generalized humanoid robot reasoning and skills. This cross-em",
+    "tags": [
+      "safetensors",
+      "gr00t_n1_5",
+      "robotics",
+      "dataset:nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim",
+      "arxiv:2501.14818",
+      "arxiv:2209.03003",
+      "arxiv:2410.24164",
+      "region:us"
+    ],
+    "downloads": 1964,
+    "likes": 199,
+    "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
+    "space_url": null,
+    "keywords_matched": "robot,robotics"
+  },
+  {
+    "model_id": "nvidia/GR00T-N1.7-3B",
+    "title": "nvidia/GR00T-N1.7-3B",
+    "description": "license: other license_name: nvidia-open-model-license license_link: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ tags: - robotics -- style=\"width:100%; max-w",
+    "tags": [
+      "safetensors",
+      "Gr00tN1d7",
+      "robotics",
+      "arxiv:2503.14734",
+      "license:other",
+      "region:us"
+    ],
+    "downloads": 53999,
+    "likes": 195,
+    "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
+    "space_url": null,
+    "keywords_matched": "robot,robotics"
+  },
+  {
+    "model_id": "physical-intelligence/fast",
+    "title": "physical-intelligence/fast",
+    "description": "library_name: transformers license: apache-2.0 tags: - robotics - tokenizer This is the official repo for the [FAST action tokenizer](https://www.pi.website/research/fast). The action tokenizer maps a",
+    "tags": [
+      "transformers",
+      "robotics",
+      "tokenizer",
+      "license:apache-2.0",
+      "endpoints_compatible",
+      "region:us"
+    ],
+    "downloads": 0,
+    "likes": 191,
+    "github_url": null,
+    "space_url": null,
+    "keywords_matched": "robot,robotics"
+  },
+  {
+    "model_id": "openbmb/MiniCPM-RobotManip",
+    "title": "openbmb/MiniCPM-RobotManip",
+    "description": "license: apache-2.0 library_name: transformers pipeline_tag: robotics tags: - vision-language-action - robotics - embodied-ai - minicpm - manipulation MiniCPM-RobotManip Please Ensure transformers==5.",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "minicpm_vla",
+      "feature-extraction",
+      "vision-language-action",
+      "robotics",
+      "embodied-ai",
+      "minicpm",
+      "manipulation",
+      "custom_code",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "downloads": 472,
+    "likes": 191,
+    "github_url": "https://github.com/OpenBMB/MiniCPM-Robot",
+    "space_url": null,
+    "keywords_matched": "vla,vision-language-action,embodied,embodied-ai,manipulation,robot,robotics"
+  }
+]

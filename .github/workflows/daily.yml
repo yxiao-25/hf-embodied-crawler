@@ -1,0 +1,44 @@
+name: Daily Trending
+
+on:
+  schedule:
+    # UTC 01:00 = 北京时间 09:00（每天）
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 允许用 GITHUB_TOKEN 提交并推送
+
+concurrency:
+  group: daily-trending
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 抓取当天 Trending 并更新 JSON
+        run: python ci_daily.py
+
+      - name: 提交并推送数据
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/trending.json
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore: 更新 Trending 数据 ($(date -u +%F))"
+            git push
+          fi

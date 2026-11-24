@@ -1,0 +1,2507 @@
+[
+  {
+    "from_user": "RemiFabre",
+    "to_user": "yuanzheng",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "andito",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "A-Mahla",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "cdeplanne",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "Anne-Charlotte",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "curtburk",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "FormaLau",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "chelleboyer",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "ravediamond",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "Halfzipp",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "jeffboudier",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "nader-at-nvidia",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "alecfong",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "dillera",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "Boopster",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "PierreRouanet",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "apirrone",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "dlouapre",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "RemiFabre",
+    "to_user": "cduss",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "Boss1342",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "vklm2002",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Skarn55",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "khaliyo",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "edgarmoreau",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ottoia1",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Suprit",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yanqinghaoya14",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "roccofelici",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Geoffrey89",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "craigm26",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Primeshift4242",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "vinnyp",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "baojian1024",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yetsun",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "0GiS0",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "samilin8899",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kittytg",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "MCacy",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cogrobotsdev0",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "webxos",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tfrere",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "rajkumarrawal",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alexey1312",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "DagK",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Domotick",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "PawelLach",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Nico-robot",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ludonline",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "johannesngo",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "marouasfinfy",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cdeplanne",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "AMALTUNGA",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "wallacewangchao",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Billynie",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "JMGxyz",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "NatashaN",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "HuggingFirst",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sebastjanm",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Tetsuto",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dara-nn",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "PhysiQuanty",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ash444",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BeckyLiu",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "pwidenfels",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Raffaton",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tommulder",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "CommandPrompt",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hajar001",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jimenezcarrero",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "itsMarco-G",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "chitrark",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ariG23498",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "FormaLau",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ashycrypt0",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yozkut",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Diquels",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "danielritchie",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "RickSanchez2020",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "8bitkick",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "noobtastic",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Halfzipp",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sbessot",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Carmenito",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "TicoRaph",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "soichinc",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "andito",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "PierreRouanet",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Boopster",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thomwolf",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alozowski",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "aduino",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "apirrone",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "clem",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "honestlyanubhav",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "SantiPa",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Anne-Charlotte",
+    "to_user": "RemiFabre",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Man1103",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "rakuten-sunilkumar-yadav",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "stephenklein",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mondal2006",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BabaWannaBeDev",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "farooqqqq",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "HintonZhang50",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "airzeus",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jacky-2026",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "aranuno",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hanklin3",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Joni32do",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "supersketchy007",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BhaskarSteve",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yutaizhou",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sadwasad",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "imazul",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Terrence-Ubuntu",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "zhq5857",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Mahameru88",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "frankcholula",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "AOS55",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "lo3535",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "MJPT2",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ericakcc",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Tonic",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tttonyalpha",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "junwux",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BobbyBearz",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "upra",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xbkaishui",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kevin510",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "philquist",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "swrj",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "GeorgeBredis",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "namul2",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "gentlebowl",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ulixes-8",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "55d",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BateCheaterDemon",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ashish12345",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ivelin",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hatsmagee",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mphielipp",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "junwuzhang",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "islexu",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "leejoonhun",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alexonrail",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dark-pen",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "pwndayma",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "YaroslavPonomarenko",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "radiance",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "3dalgo",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "AryanD",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "niobiumneo",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Deping",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "akhaliq",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ziyingsk",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "blanchon",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "skymoon17173",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "idoru",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thales1214",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BraveBlackbird",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "MikeWise1618",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "zbtgreat",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "SimonKenneth",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Trangle",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "wxz1996",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "bolerovt",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "EmericPrlx",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mqinhw",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ariellll",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thomas-yanxin",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Josephgflowers",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hu-po",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "osanseviero",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Sho-1023",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "wyli-Evan",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "oier-mees",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cadene",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "peterdavidfagan",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "taylorliu2000",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "21world",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "bnaq83",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "williamjbkl",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "carlossosa",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BecomeAllan",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "RobotDall",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "H4R",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thomwolf",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "FSharp4",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "seeT",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cbilgin",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "zliu",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "J4nn1K",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Bbyaz",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jacob-valdez",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kir0ul",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "clem",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "erud1t3",
+    "to_user": "rail-berkeley",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "melihakbulut221",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "puzhiyuan",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "firiusz123",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "HassanHaiderZev",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dima0000",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "fujinoob",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "nanamma",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ryrtdyt",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ronin88",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "howard0313",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "maxlium",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Corcore",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Daxer01",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "suqiangli",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alexvog",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Marcosncosta",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "pythonsong",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Sandhi2003",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "GoGiants1",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "psimit",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Lemon-03",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "LucioJun",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "coldilger",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "SunghunKang",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mrakeshc",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ash444",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "saaruba",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thliang01",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mddoai",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "adnannasar",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sadwasad",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "shkwon98",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Fishtiks",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "krishpop",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Sonny619",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "DorianAtSchool",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "minhle1909",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "bigearjeff",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "swpark5",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kleyt0n",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "CESI-LINEACT-Laboratory2023",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Highsky7",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Stars321123",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xzpAM",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "arlisgreat",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "knightnemo",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yuhui1130",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yushaonian",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xbruce22",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ratandeep",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "chackji",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jusjinuk",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yunho-c",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Yosmon",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "pradyML",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alaitzatxa",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "WilliamWang16",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "grv805",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "LeeRui",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Colder203",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "JianZhangAI",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xmodel",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "RocktimMBZ",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "LIMinghan",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Yinpei",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "diegoasua",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BrianDN",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kokun2",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "aadarshram",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kcyoung98",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ChrisHjorth",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thomaspzollo",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dtotsila",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "the-future-dev",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "42loops",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mphielipp",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "qiqiguaitmz",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "21world",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "3dalgo",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "claudIOeduardo",
+    "to_user": "moojink",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "heathermartinez",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Man1103",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "TULLUS",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kaweees",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dderiso",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "stephenklein",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Chahra12",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "eustance",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tibetyalman",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ANUNM",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ash444",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jonastokoliu",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yzembodied",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cocoa2525",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "WuChao-Cauchy",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jliu11",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "stanleyj",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mohamedsobhi777",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "qyliyang",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "NebulaWhisperer1",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "SovietCapitalist",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Bdrydyk",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "naveenvadlamudi",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "maxsung-ai48",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Harshmuriki",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mjuicem",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "F-Fer",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "connorads",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "clem",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "RAPOB",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "glitchyordis",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "gm8xx8",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "JadeCong",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Gmc2",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "wzkicu",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "RLobot-jun",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "KMK040412",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "brain94hxh",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Stars321123",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Logy90",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sikang99",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "LemonadeDai",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thanhndv212",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thales1214",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sautePho",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Max13243",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cagatayodabasi",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alvesrt",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "lllzheng",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "braves",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "XDEDM7",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "the-future-dev",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "blanchon",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "gentlebowl",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "CHONGYOEYAT",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dark-pen",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "John6666",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jiangan",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "WonderYear1905",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ivelin",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yuanlichuan",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "win10",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sundrops",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tecboy",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Xinrong123",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Henlly",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "JianZhangAI",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "taylorliu2000",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ruoxiang",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "chenhaojun",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Blue-kod",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mgasana",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xyzhaocs",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cppowboy",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "yincheng429",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "21world",
+    "to_user": "robotics-diffusion-transformer",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "VLA-Adapter",
+    "to_user": "yh-wang",
+    "edge_type": "following"
+  },
+  {
+    "from_user": "coejj4379",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Man1103",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "akio-hf",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "pt0603",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "suqiangli",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Ronin88",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Finerly",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jianzhang96",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "syun88",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Lizzy627",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "s42351",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hssds",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "thomas-yanxin",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "SCloudYI",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "aHiroakiIshikawa",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kai4AI",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hxxnp",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hhhJB",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Unggi",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "qiaoyuexplorer",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dark-pen",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ZCWei",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Jgogo",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xzpAM",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "JadeCong",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "lingxiaoli",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "lihuaaa1",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Christiandasw",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dsmatthews",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "UmarAzam",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xylcbd",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kdauvan",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "chautrungkien",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "laolaohai",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "laihaih",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "minhdodong",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tyf970330",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hoadothan",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "guilu0song",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hdoanthanh",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "lhoalin",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "phunghuu",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "codingbabyguy",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "acesususu",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sgzg",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "zzyzyzy",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "lubricate",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "huangsiteng",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "daoshi1593",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Chodevil",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "AustineJohnBreaker",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "liushipeng",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "DYamIK",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kimhyunwoo",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "CHONGYOEYAT",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "liuzengyun",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tc-huang",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Aries0817",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "BenedictLeo",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "PhilipBb",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Archie-Carter",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Jesse-Lim",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "giaphuo",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "leesuhun",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ccbabe",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kirdo",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Reza2kn",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "bofang1227",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dejie",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "wangxixi",
+    "to_user": "VLA-Adapter",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "gangwondo",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "szcharlesji",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "frankcholula",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sails1395",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "harshinde",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "VegTea",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ycond",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "garyphk",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "bdx0",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "maltemosbach",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "CHONGYOEYAT",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sandeshkatakam",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Josephgflowers",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "esorcicciai",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "cadene",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "21world",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "xiaoxinggui",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tauhuang",
+    "to_user": "nicklashansen",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Yost-787",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "topseven",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "markrodrigo",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dnlhn",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "John6666",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jonbaer",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "grigin",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "miav24",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "noebrndl",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Tiber2026",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "alexandreofbh",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sapucaia",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "patrickbdevaney",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "utachicodes",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dkapt",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Artale",
+    "to_user": "MirilAI",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Man1103",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "bobchenyx",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "CESI-LINEACT-Laboratory2023",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Stars321123",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "henryz-amd",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "R3SGAR",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sialjx2002",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "junwux",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "tingcao",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Sunilash",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "autmoate",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Gakakuli",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "dattarij",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "gentlebowl",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kairosiann",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "mphielipp",
+    "to_user": "CogACT",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Man1103",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kaweees",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "maxmb1",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "AMRuk",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kleyt0n",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Marleyarbkill",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "kingJulio",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "sangramrout",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "HyperbolicCurve",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "robertonh62",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "hywydw",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "flameeee",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "chenhaiquan",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Jiaming2472",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "heylogan",
+    "to_user": "GEAR-Dreams",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "a1rb4Ck",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Tariolle",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "2083l27",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Zenchiyu",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "svjack",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "gentlebowl",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "fffffchopin",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "Duyu",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "fourza07",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "21world",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "jizhongpeng",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "ustbhh",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  },
+  {
+    "from_user": "AdamJelley",
+    "to_user": "eloialonso",
+    "edge_type": "follower"
+  }
+]

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HuggingFace 具身智能 · 数据展示</title>
+<script src="/static/echarts.min.js"></script>
+<style>
+  /* —— 调色板（来自 dataviz 参考规范，light/dark 各一套）—— */
+  :root {
+    color-scheme: light;
+    --surface: #fcfcfb;
+    --page: #f9f9f7;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --series-1: #2a78d6;  /* blue */
+    --series-2: #eb6834;  /* orange */
+    --series-3: #1baf7a;  /* aqua */
+    --series-4: #eda100;  /* yellow */
+    --series-5: #e87ba4;  /* magenta */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --surface: #1a1a19;
+      --page: #0d0d0d;
+      --text-primary: #f0efec;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5;
+      --series-2: #d95926;
+      --series-3: #199e70;
+      --series-4: #c98500;
+      --series-5: #d55181;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface: #1a1a19;
+    --page: #0d0d0d;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+
+  header { margin-bottom: 28px; }
+  header h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 22px 26px;
+    margin-bottom: 22px;
+  }
+  section h2 { margin: 0 0 4px; font-size: 18px; }
+  section .sub { color: var(--text-secondary); font-size: 13px; margin: 0 0 18px; }
+
+  /* 日期切换 tab */
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tabs button {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .tabs button.active { background: var(--series-1); color: #fff; border-color: var(--series-1); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--grid); }
+  th { color: var(--text-muted); font-weight: 600; font-size: 12px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.mono { font-family: ui-monospace, "Cascadia Code", monospace; font-size: 12px; }
+  tr:last-child td { border-bottom: none; }
+
+  /* 冠军卡片 */
+  .champs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 22px; }
+  .champ {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .champ .label { color: var(--text-muted); font-size: 12px; }
+  .champ .name { font-size: 17px; font-weight: 650; margin: 4px 0; }
+  .champ .value { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .champ .value small { font-size: 13px; color: var(--text-muted); font-weight: 400; }
+
+  .chart { width: 100%; height: 420px; }
+  .chart.tall { height: 520px; }
+
+  /* 项目卡片 */
+  .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+  .proj {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .proj h3 { margin: 0; font-size: 15px; }
+  .proj .meta { color: var(--text-muted); font-size: 12px; }
+  .proj .desc { color: var(--text-secondary); font-size: 13px; flex: 1; }
+  .proj .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .proj .tag {
+    font-size: 11px;
+    color: var(--series-1);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  .proj .links a {
+    font-size: 12px;
+    color: var(--series-1);
+    text-decoration: none;
+    margin-right: 12px;
+  }
+  .proj .links a:hover { text-decoration: underline; }
+
+  .note { color: var(--text-muted); font-size: 12px; margin-top: 10px; }
+  .loading { color: var(--text-muted); font-size: 14px; padding: 20px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>HuggingFace 具身智能 · 数据展示</h1>
+    <p>数据来源：HuggingFace 官方站（huggingface.co）· 存储：SQLite · 展示：Flask + ECharts</p>
+  </header>
+
+  <!-- 任务1：一周 Trending -->
+  <section>
+    <h2>一、一周 Trending 榜单</h2>
+    <p class="sub">每天自动抓取一次 HF 热门模型榜单，按天展示（需要连续运行 7 天才会累积满一周）。</p>
+    <div class="tabs" id="trending-tabs"></div>
+    <div id="trending-body"><div class="loading">加载中…</div></div>
+  </section>
+
+  <!-- 任务2：大V + 关注网络 -->
+  <section>
+    <h2>二、具身智能 Top10 大V 与关注网络</h2>
+    <p class="sub">具身智能领域粉丝数最多的 10 个账号（个人账号），以及他们之间的关注网络。</p>
+    <div id="influencer-table"></div>
+    <div class="champs" id="champs"></div>
+    <h2 style="font-size:15px; margin-top:6px;">关注网络（大V 的关注 + 粉丝）</h2>
+    <div id="network-chart" class="chart tall"></div>
+    <p class="note">节点越大表示粉丝越多。蓝色 = Top10 大V，橙色 = 其他账号。边 = 关注关系（大V → 被关注者 / 粉丝 → 大V）。</p>
+  </section>
+
+  <!-- 任务2 统计排行 -->
+  <section>
+    <h2>三、入度 / 出度 / 总和 排行</h2>
+    <p class="sub">在「具身智能作者圈内」统计：入度 = 被多少个圈内作者关注 · 出度 = 关注了多少个圈内作者 · 总和 = 两者之和。</p>
+    <div id="degree-chart" class="chart"></div>
+    <div id="degree-table" style="margin-top:14px;"></div>
+  </section>
+
+  <!-- 任务3：热门项目 -->
+  <section>
+    <h2>四、最火热的 10 个具身智能项目</h2>
+    <p class="sub">用官方标签（robotics / VLA / manipulation 等）识别，附开源 GitHub 链接与 HuggingFace Space。</p>
+    <div class="projects" id="projects"><div class="loading">加载中…</div></div>
+  </section>
+</div>
+
+<script>
+// ===== 工具：拉取 JSON =====
+async function fetchJSON(url) {
+  const resp = await fetch(url);
+  return resp.json();
+}
+
+// ===== 调色板（与 CSS 变量一致的 JS 值，供 ECharts 使用）=====
+function palette() {
+  const cs = getComputedStyle(document.documentElement);
+  return {
+    s1: cs.getPropertyValue('--series-1').trim(),
+    s2: cs.getPropertyValue('--series-2').trim(),
+    s3: cs.getPropertyValue('--series-3').trim(),
+    s4: cs.getPropertyValue('--series-4').trim(),
+    text: cs.getPropertyValue('--text-primary').trim(),
+    muted: cs.getPropertyValue('--text-muted').trim(),
+    grid: cs.getPropertyValue('--grid').trim(),
+    surface: cs.getPropertyValue('--surface').trim(),
+  };
+}
+
+// ===== 任务1：Trending 按天展示 =====
+async function renderTrending() {
+  const { dates, data } = await fetchJSON('/api/trending');
+  const tabs = document.getElementById('trending-tabs');
+  const body = document.getElementById('trending-body');
+  if (!dates.length) { body.innerHTML = '<div class="loading">暂无数据，请先运行 crawler_trending.py</div>'; return; }
+  dates.forEach((d, i) => {
+    const b = document.createElement('button');
+    b.textContent = d;
+    if (i === 0) b.className = 'active';
+    b.onclick = () => {
+      tabs.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      renderTrendingTable(d, data[d]);
+    };
+    tabs.appendChild(b);
+  });
+  renderTrendingTable(dates[0], data[dates[0]]);
+}
+function renderTrendingTable(date, rows) {
+  const body = document.getElementById('trending-body');
+  let html = `<table><thead><tr>
+    <th>#</th><th>模型</th><th>作者</th><th>类型</th>
+    <th class="num">下载</th><th class="num">点赞</th><th class="num">作者粉丝</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    html += `<tr>
+      <td>${r.rank}</td>
+      <td class="mono">${esc(r.model_id)}</td>
+      <td>${esc(r.author || '')}</td>
+      <td>${esc(r.pipeline_tag || '')}</td>
+      <td class="num">${fmt(r.downloads)}</td>
+      <td class="num">${fmt(r.likes)}</td>
+      <td class="num">${fmt(r.author_followers)}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  body.innerHTML = html;
+}
+
+// ===== 任务2：大V榜 + 冠军卡片 + 度数统计 =====
+async function renderInfluencers() {
+  const stats = await fetchJSON('/api/influencers');
+  renderInfluencerTable(stats.top_influencers || []);
+  const inTop = (stats.in_degree_top || [])[0];
+  const outTop = (stats.out_degree_top || [])[0];
+  const totTop = (stats.total_degree_top || [])[0];
+  const champs = document.getElementById('champs');
+  if (!inTop && !outTop && !totTop) {
+    champs.innerHTML = '<div class="loading">暂无关注关系数据</div>';
+  } else {
+    champs.innerHTML = `
+      <div class="champ"><div class="label">圈内入度最多（被关注）</div>
+        <div class="name">${esc(inTop && inTop.username)}</div>
+        <div class="value">${fmt(inTop && inTop.in_degree)}<small> 圈内被关注</small></div></div>
+      <div class="champ"><div class="label">圈内出度最多（关注）</div>
+        <div class="name">${esc(outTop && outTop.username)}</div>
+        <div class="value">${fmt(outTop && outTop.out_degree)}<small> 圈内关注</small></div></div>
+      <div class="champ"><div class="label">圈内入度 + 出度最多</div>
+        <div class="name">${esc(totTop && totTop.username)}</div>
+        <div class="value">${fmt(totTop && totTop.total_degree)}<small> 总和</small></div></div>`;
+  }
+  renderDegreeChart(stats);
+  renderDegreeTable(stats);
+}
+
+function renderInfluencerTable(rows) {
+  const el = document.getElementById('influencer-table');
+  if (!rows.length) { el.innerHTML = ''; return; }
+  let html = `<table><thead><tr>
+    <th>#</th><th>账号</th><th>全称</th><th>类型</th>
+    <th class="num">粉丝数</th><th class="num">关注数</th>
+  </tr></thead><tbody>`;
+  rows.forEach((r, i) => {
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td class="mono">${esc(r.username)}</td>
+      <td>${esc(r.fullname || '')}</td>
+      <td>${r.type === 'org' ? '组织' : '个人'}</td>
+      <td class="num">${fmt(r.follower_count)}</td>
+      <td class="num">${r.following_count == null ? '—' : fmt(r.following_count)}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+// ===== 任务2：网络图（画 following + follower 全部边）=====
+async function renderNetwork() {
+  const edges = await fetchJSON('/api/network');
+  if (!edges.length) { document.getElementById('network-chart').innerHTML = '<div class="loading">暂无关注关系数据</div>'; return; }
+
+  const p = palette();
+  const stats = await fetchJSON('/api/influencers');
+  const big = new Map();   // 大V：username -> 全网粉丝数（决定节点大小）
+  (stats.top_influencers || []).forEach(x => big.set(x.username, x.follower_count || 10));
+
+  const nodes = new Map();
+  big.forEach((fc, n) => nodes.set(n, { name: n, category: 0, value: fc }));
+  edges.forEach(e => {
+    if (!nodes.has(e.from_user)) nodes.set(e.from_user, { name: e.from_user, category: 1, value: 5 });
+    if (!nodes.has(e.to_user)) nodes.set(e.to_user, { name: e.to_user, category: 1, value: 5 });
+  });
+  const links = edges
+    .filter(e => nodes.has(e.from_user) && nodes.has(e.to_user))
+    .map(e => ({ source: e.from_user, target: e.to_user, edgeType: e.edge_type }));
+
+  const chart = echarts.init(document.getElementById('network-chart'));
+  chart.setOption({
+    backgroundColor: p.surface,
+    tooltip: { formatter: p2 => p2.dataType === 'node' ? p2.data.name : `${p2.data.source} → ${p2.data.target}（${p2.data.edgeType}）` },
+    series: [{
+      type: 'graph', layout: 'force',
+      roam: true, draggable: true,
+      force: { repulsion: 60, edgeLength: 40, gravity: 0.2 },
+      label: { show: true, fontSize: 10, color: p.text,
+        formatter: p2 => p2.data.category === 0 ? p2.data.name : '' },
+      categories: [{ name: '大V', itemStyle: { color: p.s1 } },
+                   { name: '其他账号', itemStyle: { color: p.s2 } }],
+      data: [...nodes.values()],
+      links,
+      emphasis: { focus: 'adjacency', lineStyle: { width: 3 } },
+      lineStyle: { color: p.muted, curveness: 0.1, opacity: 0.25 },
+      symbolSize: val => Math.max(6, Math.min(40, Math.sqrt((val || 5)) * 1.6)),
+    }]
+  });
+  window.addEventListener('resize', () => chart.resize());
+}
+
+// ===== 任务2：入度/出度 柱状图 =====
+function renderDegreeChart(stats) {
+  const p = palette();
+  const list = (stats.in_degree_top || []).filter(x => x.in_degree > 0 || x.out_degree > 0);
+  if (!list.length) { document.getElementById('degree-chart').innerHTML = '<div class="loading">暂无关注关系数据</div>'; return; }
+  const top = list.slice(0, 10).reverse(); // 反转让最大的在顶部
+  const chart = echarts.init(document.getElementById('degree-chart'));
+  chart.setOption({
+    backgroundColor: p.surface,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['入度(圈内被关注)', '出度(圈内关注)'], textStyle: { color: p.muted }, top: 0 },
+    grid: { left: 140, right: 30, top: 36, bottom: 24 },
+    xAxis: { type: 'value', axisLine: { lineStyle: { color: p.muted } }, splitLine: { lineStyle: { color: p.grid } }, axisLabel: { color: p.muted } },
+    yAxis: { type: 'category', data: top.map(x => x.username), axisLine: { lineStyle: { color: p.muted } }, axisLabel: { color: p.text, fontSize: 12 } },
+    series: [
+      { name: '入度(圈内被关注)', type: 'bar', data: top.map(x => x.in_degree), itemStyle: { color: p.s1 }, barMaxWidth: 16 },
+      { name: '出度(圈内关注)', type: 'bar', data: top.map(x => x.out_degree), itemStyle: { color: p.s3 }, barMaxWidth: 16 },
+    ]
+  });
+  window.addEventListener('resize', () => chart.resize());
+}
+
+function renderDegreeTable(stats) {
+  const el = document.getElementById('degree-table');
+  const rows = stats.total_degree_top || [];
+  let html = `<table><thead><tr>
+    <th>账号</th><th>类型</th><th class="num">全网粉丝</th><th class="num">入度(圈内被关注)</th><th class="num">出度(圈内关注)</th><th class="num">总和</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    html += `<tr>
+      <td class="mono">${esc(r.username)}</td>
+      <td>${r.type === 'org' ? '组织' : '个人'}</td>
+      <td class="num">${fmt(r.follower_count)}</td>
+      <td class="num">${fmt(r.in_degree)}</td>
+      <td class="num">${fmt(r.out_degree)}</td>
+      <td class="num">${fmt(r.total_degree)}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+// ===== 任务3：项目卡片 =====
+async function renderProjects() {
+  const rows = await fetchJSON('/api/projects');
+  const el = document.getElementById('projects');
+  if (!rows.length) { el.innerHTML = '<div class="loading">暂无数据，请先运行 crawler_projects.py</div>'; return; }
+  el.innerHTML = rows.map((r, i) => `
+    <div class="proj">
+      <h3>${i + 1}. ${esc(r.title || r.model_id)}</h3>
+      <div class="meta mono">${esc(r.model_id)} · 赞 ${fmt(r.likes)} · 下载 ${fmt(r.downloads)}</div>
+      ${r.description ? `<div class="desc">${esc(r.description)}</div>` : ''}
+      <div class="tags">${(r.tags || []).slice(0, 6).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+      <div class="links">
+        ${r.github_url ? `<a href="${esc(r.github_url)}" target="_blank">GitHub ↗</a>` : ''}
+        ${r.space_url ? `<a href="${esc(r.space_url)}" target="_blank">HuggingFace Space ↗</a>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+// ===== 小工具 =====
+function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmt(n) { if (n == null) return '—'; const v = Number(n); if (v >= 1e6) return (v/1e6).toFixed(1) + 'M'; if (v >= 1e3) return (v/1e3).toFixed(1) + 'K'; return String(v); }
+
+// ===== 启动 =====
+renderTrending();
+renderInfluencers();
+renderNetwork();
+renderProjects();
+</script>
+</body>
+</html>
