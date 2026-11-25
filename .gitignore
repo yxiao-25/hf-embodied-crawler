@@ -2,11 +2,12 @@
 __pycache__/
 *.pyc
 
-# 本地数据库（会由爬虫重新生成；云端展示用的是 docs/data/*.json）
-data/hf.db
+# 本地日志（不入库）
 data/daily_log.txt
 
 # 内部工作文档（不上传到公开仓库）
 工作记录.md
 工作计划.md
 项目要求.txt
+项目讲解.md
+项目讲解.pdf

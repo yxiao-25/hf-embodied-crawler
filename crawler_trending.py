@@ -24,7 +24,7 @@ from hf_client import HFClient
 
 def fetch_trending():
     """抓取当天 Trending 榜单，返回 list[dict]（不含 crawl_date，由调用方补充）。
-    供本文件的 crawl_trending（写 SQLite）和 ci_daily.py（写 JSON）两处复用。"""
+    供本文件的 crawl_trending（写 SQLite）调用；crawl_trending 再被 run_daily.py 和 ci_daily.py 复用。"""
     client = HFClient()
 
     print(f"正在抓取 Trending（limit={config.TRENDING_LIMIT}）...")
@@ -67,7 +67,24 @@ def crawl_trending():
 
     # replace=False 表示「追加」而不是覆盖（每天的数据靠 crawl_date 区分）
     db.insert_many("trending_daily", rows, replace=False)
+
+    # 题目只要「一周」：只保留最近 7 个不同日期的快照，更早的删掉
+    prune_to_recent_days(7)
+
     print(f"完成：已保存 {len(rows)} 条当日 Trending 数据（日期 {today}）。")
+
+
+def prune_to_recent_days(n=7):
+    """只保留 trending_daily 里最近 n 个不同日期的快照，更早的删掉。"""
+    conn = db.get_conn()
+    keep = [r[0] for r in conn.execute(
+        "SELECT DISTINCT crawl_date FROM trending_daily ORDER BY crawl_date DESC LIMIT ?", (n,))]
+    if keep:
+        placeholders = ",".join("?" * len(keep))
+        conn.execute(
+            f"DELETE FROM trending_daily WHERE crawl_date NOT IN ({placeholders})", keep)
+        conn.commit()
+    conn.close()
 
 
 if __name__ == "__main__":

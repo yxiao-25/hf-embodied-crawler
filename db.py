@@ -31,20 +31,20 @@ def init_db():
             crawl_date       TEXT,      -- 采集日期，如 2026-11-21
             rank             INTEGER,   -- 当日排名（1 开始）
             model_id         TEXT,      -- 模型ID，如 tencent/Hy-Embodied-0.5-VLA-RoboTwin
-            author           TEXT,      -- 作者（组织或个人）
+            author           TEXT,      -- 作者
             author_followers INTEGER,   -- 作者粉丝数
             downloads        INTEGER,
             likes            INTEGER,
             pipeline_tag     TEXT       -- 模型类型，如 robotics / text-generation
         );
 
-        -- 任务2：具身智能作者（组织 + 个人都存，Top10 大V 按 follower_count 排序取）
+        -- 任务2：具身智能 Top10 大V（个人账号，按 follower_count 排序取）
         CREATE TABLE IF NOT EXISTS influencers (
             username        TEXT PRIMARY KEY,
             fullname        TEXT,
-            type            TEXT,       -- 'org' 组织 / 'user' 个人
+            type            TEXT,       -- 账号类型（'user' 个人 / 'org' 组织）
             follower_count  INTEGER,    -- 全网粉丝总数（从主页 HTML 里取的）
-            following_count INTEGER     -- 全网关注总数（仅个人账号有，组织为 NULL）
+            following_count INTEGER     -- 全网关注总数
         );
 
         -- 任务2：关注边（有向）：from_user 关注了 to_user

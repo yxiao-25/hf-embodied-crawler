@@ -14,7 +14,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
 
 # HuggingFace 官方站地址。
-# 需开全局代理（翻墙）访问；国内镜像 hf-mirror.com 接口不完整（组织粉丝/关注列表 404），已弃用。
+# 需开全局代理（翻墙）访问。
 BASE_URL = "https://huggingface.co"
 
 # 数据库文件路径。
@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "data", "hf.db")
 
 # 任务1：每天抓取的 Trending 榜单条数
-# 注意：镜像站 /api/trending 的 limit 上限是 20（超过会报 HTTP 400，且无分页），所以这里最多 20
+# 注意：/api/trending 的 limit 上限是 20（超过会报 HTTP 400，且无分页），所以这里最多 20
 TRENDING_LIMIT = 20
 
 # 任务2：具身智能领域大V数量

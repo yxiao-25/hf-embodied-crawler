@@ -3,7 +3,7 @@
 爬取 HuggingFace 的 Trending 榜单、具身智能领域大V 关注网络、最火热的具身智能项目，整理到 SQLite 数据库，并展示成网页。
 
 > **两种使用方式**
-> - **云端托管版（推荐，零维护）**：网页部署在 GitHub Pages，每天由 GitHub Actions 自动抓取数据并更新，你电脑开关机、翻不翻墙都不影响。直接打开：`https://<你的用户名>.github.io/<仓库名>/`
+> - **云端托管版（推荐，零维护）**：网页部署在 GitHub Pages，由 GitHub Actions 自动抓取数据并更新（Trending 每天、大V/项目每周），你电脑开关机、翻不翻墙都不影响。直接打开：`https://<你的用户名>.github.io/<仓库名>/`
 > - **本地运行版（学习/调试用）**：Flask + SQLite，跑在自己电脑上，需要开翻墙代理。
 
 ## 功能
@@ -19,16 +19,21 @@
 
 ```
 GitHub Actions（美国服务器，免翻墙）
-   └─ 每天 09:00（北京时间）定时运行 ci_daily.py
-        1. 抓当天 HuggingFace Trending
-        2. upsert 进 docs/data/trending.json（跨天累积）
-        3. git commit + push 回仓库
-              └─ GitHub Pages 自动重新部署网页（任何人随时可打开）
+   ├─ 每天 09:00（北京时间）跑 ci_daily.py（任务1 Trending）
+   │     1. 抓当天 Trending 写进 SQLite（只保留最近 7 天）
+   │     2. 从 SQLite 导出 docs/data/trending.json
+   │     3. commit data/hf.db + trending.json → push
+   └─ 每周一 10:00（北京时间）跑 ci_weekly.py（任务2/3）
+         1. 抓大V关注网络 + 热门项目，写进 SQLite（清空重写）
+         2. 从 SQLite 导出 influencers/network/projects.json
+         3. commit data/hf.db + 三个 JSON → push
+   → GitHub Pages 自动重新部署网页（任何人随时可打开）
 ```
 
 - **为什么不用翻墙**：GitHub Actions 的运行环境在美国，直接访问 `huggingface.co` 是通的。
-- **为什么数据不会丢**：CI 环境没有持久化磁盘，所以数据以 JSON 文件的形式提交在仓库里，天然持久化、可回溯。
-- **任务2/任务3 是快照**：大V、关注网络、热门项目不是每天变的，作为一次性数据导出提交（可随时本地重跑刷新）。
+- **为什么数据不会丢**：CI 环境没有持久化磁盘，所以 `data/hf.db`（SQLite）和 `docs/data/*.json`（网页读的导出）都以文件形式提交在仓库里，天然持久化、可回溯。
+- **SQLite 是源、JSON 是导出**：三个任务都先写 SQLite，再导出 JSON 给静态网页读（浏览器读不了 SQLite）。这也是 `data/hf.db` 会提交进仓库的原因。
+- **Trending 只留 7 天**：题目只要「一周」，所以每天追加后会把 7 天以前的老数据删掉。
 
 ## 技术栈
 
@@ -45,22 +50,24 @@ GitHub Actions（美国服务器，免翻墙）
 ├── config.py              # 全局配置（官方站地址、关键词、抓取条数、限速）
 ├── hf_client.py           # HF 请求层（统一地址、限速、重试）
 ├── db.py                  # SQLite 建表 + 读写
-├── crawler_trending.py    # 任务1：每日 Trending 快照（fetch_trending 被两处复用）
+├── crawler_trending.py    # 任务1：每日 Trending 快照（crawl_trending 被本地/云端复用，只留最近 7 天）
 ├── crawler_influencers.py # 任务2：大V + 关注网络
 ├── crawler_projects.py    # 任务3：热门具身智能项目
 ├── analysis.py            # 入度/出度统计
 ├── app.py                 # Flask 网页后端（本地版）
 ├── run_daily.py           # 本地每日采集入口（写 SQLite，配合 Windows 计划任务）
 ├── export_json.py         # 把 SQLite 导出成 docs/data/*.json（供云端网页）
-├── ci_daily.py            # GitHub Actions 每日入口（抓 Trending → 更新 JSON）
-├── .github/workflows/daily.yml  # 云端定时任务（cron）
+├── ci_daily.py            # GitHub Actions 每日入口（任务1：写 SQLite → 导出 trending.json）
+├── ci_weekly.py           # GitHub Actions 每周入口（任务2/3：写 SQLite → 导出 3 个 JSON）
+├── .github/workflows/daily.yml  # 云端每日定时任务（cron）
+├── .github/workflows/weekly.yml # 云端每周定时任务（cron）
 ├── docs/                  # 云端静态站（GitHub Pages 部署目录）
 │   ├── index.html         #   网页（读 data/*.json）
 │   ├── echarts.min.js     #   ECharts（本地化）
 │   └── data/*.json        #   4 块数据（trending/influencers/network/projects）
 ├── templates/index.html   # 本地 Flask 版网页（读 /api/*）
 ├── static/echarts.min.js  # 本地 ECharts
-└── data/hf.db             # SQLite 数据库（运行后生成，不入库）
+└── data/hf.db             # SQLite 数据库（提交到仓库，作为长期存储 / 数据源）
 ```
 
 ## 本地运行
@@ -85,9 +92,8 @@ python app.py
 ## 数据说明
 
 - **官方站 + 代理**：本地运行数据直接来自 HuggingFace 官方站 `huggingface.co`，需要开全局代理（翻墙）访问；云端 GitHub Actions 无需代理。
-- **一周 Trending**：HF 不提供历史按天数据，采用「每日快照」——每天跑一次，连续 7 天累积成一周。
-- **粉丝数来源**：`/api/users/{name}` 接口对组织和个人都返回 404，粉丝数改从作者主页 HTML 里内嵌的 `"followerCount"` 字段用正则提取。
-- **组织账号限制**：HuggingFace 官方对组织账号的「关注/粉丝列表」接口不开放，因此关注网络只在个人账号之间构建（本项目任务2 只做个人账号）。
+- **一周 Trending**：HF 不提供历史按天数据，采用「每日快照」——每天跑一次存当天榜单；库里只保留最近 7 天，正好凑成一周。
+- **粉丝数来源**：`/api/users/{name}` 接口返回 404，粉丝数改从作者主页 HTML 里内嵌的 `"followerCount"` 字段用正则提取。
 
 ## License
 

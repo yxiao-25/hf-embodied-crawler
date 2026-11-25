@@ -1,54 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-ci_daily.py —— GitHub Actions 每天自动执行的入口
+ci_daily.py —— GitHub Actions 每天自动执行的入口（任务1：Trending）
 
 用途：
     在 GitHub Actions（美国服务器，无需翻墙）里每天跑一次：
-      1. 抓取当天 HuggingFace Trending 榜单；
-      2. 把这一天的数据 upsert 进 docs/data/trending.json（该文件提交在仓库里，是跨天累积的存储）；
-      3. 由随后的 workflow 步骤 git commit + push 回仓库，GitHub Pages 自动更新。
+      1. 把当天 Trending 榜单写进 SQLite 的 trending_daily 表
+         （复用 crawler_trending.crawl_trending，含「只留最近 7 天」裁剪）；
+      2. 从 SQLite 导出 docs/data/trending.json；
+      3. 由 workflow 把 data/hf.db + docs/data/trending.json 一起 commit + push，
+         GitHub Pages 自动更新。
 
-    与本地 run_daily.py（写 SQLite）的区别：
-      CI 环境没有持久化磁盘，SQLite 每次都会被清空；
-      所以这里直接读写 JSON 文件，把「历史天数」都存在 docs/data/trending.json 里（跨天累积）。
+说明：
+    云端现在也「先落 SQLite、再导出 JSON」，和本地 run_daily.py + export_json.py 走同一条路。
+    任务2/任务3 由 ci_weekly.py 每周跑，不在这里。
 """
 
-import datetime
-import json
-import os
-
-import config
+import db
 import crawler_trending
-
-TRENDING_JSON = os.path.join(config.BASE_DIR, "docs", "data", "trending.json")
+import export_json
 
 
 def main():
-    today = datetime.date.today().isoformat()
-
-    print(f"[{today}] 抓取当天 Trending ...")
-    rows = crawler_trending.fetch_trending()
-    if not rows:
-        print("未拿到数据（可能被限流），本次跳过。")
-        return
-    for r in rows:
-        r["crawl_date"] = today
-
-    # 读取已提交的历史数据（里面是之前每天累积的天数）
-    payload = {"dates": [], "data": {}}
-    if os.path.exists(TRENDING_JSON):
-        with open(TRENDING_JSON, encoding="utf-8") as f:
-            payload = json.load(f)
-
-    # 覆盖/新增今天这一天的数据（同一天重复跑只会替换，不会累积出重复）
-    payload["data"][today] = rows
-    payload["dates"] = sorted(payload["data"].keys())
-
-    os.makedirs(os.path.dirname(TRENDING_JSON), exist_ok=True)
-    with open(TRENDING_JSON, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
-
-    print(f"已更新 {today}，累计 {len(payload['dates'])} 天：{', '.join(payload['dates'])}")
+    db.init_db()                           # 确保 4 张表存在
+    crawler_trending.crawl_trending()      # 抓当天 trending 写 SQLite（追加 + 裁剪到最近 7 天）
+    export_json.export_files(["trending"])  # SQLite → docs/data/trending.json
 
 
 if __name__ == "__main__":

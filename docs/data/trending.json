@@ -6,7 +6,7 @@
   "data": {
     "2026-11-21": [
       {
-        "id": 21,
+        "id": 41,
         "crawl_date": "2026-11-21",
         "rank": 1,
         "model_id": "thinkingmachines/Inkling-2-Mini",
@@ -17,7 +17,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 22,
+        "id": 42,
         "crawl_date": "2026-11-21",
         "rank": 2,
         "model_id": "harness-hub/Qwen3.8-27B-pi-adapted",
@@ -28,7 +28,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 23,
+        "id": 43,
         "crawl_date": "2026-11-21",
         "rank": 3,
         "model_id": "unsloth/Inkling-2-Mini-GGUF",
@@ -39,7 +39,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 24,
+        "id": 44,
         "crawl_date": "2026-11-21",
         "rank": 4,
         "model_id": "tencent/Hy4-flash",
@@ -50,7 +50,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 25,
+        "id": 45,
         "crawl_date": "2026-11-21",
         "rank": 5,
         "model_id": "Lightricks/LTX-2.5",
@@ -61,7 +61,7 @@
         "pipeline_tag": "image-to-video"
       },
       {
-        "id": 26,
+        "id": 46,
         "crawl_date": "2026-11-21",
         "rank": 6,
         "model_id": "inworld/voice-isolator",
@@ -72,7 +72,7 @@
         "pipeline_tag": "audio-to-audio"
       },
       {
-        "id": 27,
+        "id": 47,
         "crawl_date": "2026-11-21",
         "rank": 7,
         "model_id": "apple/FastFrames-L",
@@ -83,7 +83,7 @@
         "pipeline_tag": "text-to-video"
       },
       {
-        "id": 28,
+        "id": 48,
         "crawl_date": "2026-11-21",
         "rank": 8,
         "model_id": "higurashi-ai/Haru-4B",
@@ -94,7 +94,7 @@
         "pipeline_tag": "audio-to-audio"
       },
       {
-        "id": 29,
+        "id": 49,
         "crawl_date": "2026-11-21",
         "rank": 9,
         "model_id": "meituan-longcat/LongCat-Video-Avatar-1.6",
@@ -105,7 +105,7 @@
         "pipeline_tag": null
       },
       {
-        "id": 30,
+        "id": 50,
         "crawl_date": "2026-11-21",
         "rank": 10,
         "model_id": "n4ze3m/tiny-voca",
@@ -116,7 +116,7 @@
         "pipeline_tag": "text-to-speech"
       },
       {
-        "id": 31,
+        "id": 51,
         "crawl_date": "2026-11-21",
         "rank": 11,
         "model_id": "Qwen/Qwen3.8-27B",
@@ -127,7 +127,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 32,
+        "id": 52,
         "crawl_date": "2026-11-21",
         "rank": 12,
         "model_id": "maxwell-model/Maxwell-V1-Flash",
@@ -138,7 +138,7 @@
         "pipeline_tag": "text-generation"
       },
       {
-        "id": 33,
+        "id": 53,
         "crawl_date": "2026-11-21",
         "rank": 13,
         "model_id": "RadixArk/DaisyRose-27B",
@@ -149,7 +149,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 34,
+        "id": 54,
         "crawl_date": "2026-11-21",
         "rank": 14,
         "model_id": "sensenova/SenseNova-Loop-9B",
@@ -160,7 +160,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 35,
+        "id": 55,
         "crawl_date": "2026-11-21",
         "rank": 15,
         "model_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
@@ -171,7 +171,7 @@
         "pipeline_tag": "text-generation"
       },
       {
-        "id": 36,
+        "id": 56,
         "crawl_date": "2026-11-21",
         "rank": 16,
         "model_id": "MiniMaxAI/MiniMax-H3-Image",
@@ -182,7 +182,7 @@
         "pipeline_tag": "text-to-image"
       },
       {
-        "id": 37,
+        "id": 57,
         "crawl_date": "2026-11-21",
         "rank": 17,
         "model_id": "apple/DepthPro2",
@@ -193,7 +193,7 @@
         "pipeline_tag": "depth-estimation"
       },
       {
-        "id": 38,
+        "id": 58,
         "crawl_date": "2026-11-21",
         "rank": 18,
         "model_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized",
@@ -204,7 +204,7 @@
         "pipeline_tag": "text-to-image"
       },
       {
-        "id": 39,
+        "id": 59,
         "crawl_date": "2026-11-21",
         "rank": 19,
         "model_id": "Cloudflare/clairic",
@@ -215,7 +215,7 @@
         "pipeline_tag": "image-text-to-text"
       },
       {
-        "id": 40,
+        "id": 60,
         "crawl_date": "2026-11-21",
         "rank": 20,
         "model_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
@@ -228,204 +228,224 @@
     ],
     "2026-11-24": [
       {
+        "id": 61,
+        "crawl_date": "2026-11-24",
         "rank": 1,
         "model_id": "thinkingmachines/Inkling-2-Mini",
         "author": "thinkingmachines",
         "author_followers": 3386,
         "downloads": 69042,
         "likes": 5618,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 62,
+        "crawl_date": "2026-11-24",
         "rank": 2,
         "model_id": "unsloth/Inkling-2-Mini-GGUF",
         "author": "unsloth",
         "author_followers": 40996,
         "downloads": 1913407,
         "likes": 1175,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 63,
+        "crawl_date": "2026-11-24",
         "rank": 3,
         "model_id": "inworld/voice-isolator",
         "author": "inworld",
         "author_followers": 514,
         "downloads": 12733,
         "likes": 768,
-        "pipeline_tag": "audio-to-audio",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "audio-to-audio"
       },
       {
+        "id": 64,
+        "crawl_date": "2026-11-24",
         "rank": 4,
         "model_id": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
         "author": "AtomicChat",
         "author_followers": 1671,
         "downloads": 573775,
         "likes": 692,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 65,
+        "crawl_date": "2026-11-24",
         "rank": 5,
         "model_id": "harness-hub/Qwen3.8-27B-pi-adapted",
         "author": "harness-hub",
         "author_followers": 583,
         "downloads": 3529,
         "likes": 1051,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 66,
+        "crawl_date": "2026-11-24",
         "rank": 6,
         "model_id": "higurashi-ai/Haru-4B",
         "author": "higurashi-ai",
         "author_followers": 246,
         "downloads": 9575,
         "likes": 947,
-        "pipeline_tag": "audio-to-audio",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "audio-to-audio"
       },
       {
+        "id": 67,
+        "crawl_date": "2026-11-24",
         "rank": 7,
         "model_id": "tencent/Hy4-flash",
         "author": "tencent",
         "author_followers": 13931,
         "downloads": 9167,
         "likes": 663,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 68,
+        "crawl_date": "2026-11-24",
         "rank": 8,
         "model_id": "SulphurAI/Sulphur-3",
         "author": "SulphurAI",
         "author_followers": 1083,
         "downloads": 160965,
         "likes": 866,
-        "pipeline_tag": null,
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": null
       },
       {
+        "id": 69,
+        "crawl_date": "2026-11-24",
         "rank": 9,
         "model_id": "sensenova/SenseNova-Loop-9B",
         "author": "sensenova",
         "author_followers": 983,
         "downloads": 2696,
         "likes": 659,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 70,
+        "crawl_date": "2026-11-24",
         "rank": 10,
         "model_id": "apple/FastFrames-L",
         "author": "apple",
         "author_followers": 8647,
         "downloads": 0,
         "likes": 579,
-        "pipeline_tag": "text-to-video",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "text-to-video"
       },
       {
+        "id": 71,
+        "crawl_date": "2026-11-24",
         "rank": 11,
         "model_id": "apple/DepthPro2",
         "author": "apple",
         "author_followers": 8647,
         "downloads": 0,
         "likes": 1156,
-        "pipeline_tag": "depth-estimation",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "depth-estimation"
       },
       {
+        "id": 72,
+        "crawl_date": "2026-11-24",
         "rank": 12,
         "model_id": "Qwen/Qwen3.8-27B",
         "author": "Qwen",
         "author_followers": 118075,
         "downloads": 6122057,
         "likes": 21695,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 73,
+        "crawl_date": "2026-11-24",
         "rank": 13,
         "model_id": "Lightricks/LTX-2.5",
         "author": "Lightricks",
         "author_followers": 7018,
         "downloads": 3024745,
         "likes": 13240,
-        "pipeline_tag": "image-to-video",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-to-video"
       },
       {
+        "id": 74,
+        "crawl_date": "2026-11-24",
         "rank": 14,
         "model_id": "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized",
         "author": "chatrlabs",
         "author_followers": 154,
         "downloads": 474726,
         "likes": 868,
-        "pipeline_tag": "text-to-image",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "text-to-image"
       },
       {
+        "id": 75,
+        "crawl_date": "2026-11-24",
         "rank": 15,
         "model_id": "inclusionAI/Ling-3.2-air",
         "author": "inclusionAI",
         "author_followers": 3840,
         "downloads": 733,
         "likes": 145,
-        "pipeline_tag": null,
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": null
       },
       {
+        "id": 76,
+        "crawl_date": "2026-11-24",
         "rank": 16,
         "model_id": "Sentinel7/h3",
         "author": "Sentinel7",
         "author_followers": 521,
         "downloads": 0,
         "likes": 1697,
-        "pipeline_tag": null,
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": null
       },
       {
+        "id": 77,
+        "crawl_date": "2026-11-24",
         "rank": 17,
         "model_id": "RadixArk/DaisyRose-27B",
         "author": "RadixArk",
         "author_followers": 445,
         "downloads": 2475,
         "likes": 348,
-        "pipeline_tag": "image-text-to-text",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "image-text-to-text"
       },
       {
+        "id": 78,
+        "crawl_date": "2026-11-24",
         "rank": 18,
         "model_id": "inclusionAI/LingSante-3.1-flash",
         "author": "inclusionAI",
         "author_followers": 3840,
         "downloads": 1070,
         "likes": 134,
-        "pipeline_tag": "text-generation",
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": "text-generation"
       },
       {
+        "id": 79,
+        "crawl_date": "2026-11-24",
         "rank": 19,
         "model_id": "facebook/sam-3d-body-dinov3",
         "author": "facebook",
         "author_followers": 16569,
         "downloads": 20355,
         "likes": 1869,
-        "pipeline_tag": null,
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": null
       },
       {
+        "id": 80,
+        "crawl_date": "2026-11-24",
         "rank": 20,
         "model_id": "meituan-longcat/LongCat-Video-Avatar-1.6",
         "author": "meituan-longcat",
         "author_followers": 5676,
         "downloads": 4665,
         "likes": 476,
-        "pipeline_tag": null,
-        "crawl_date": "2026-11-24"
+        "pipeline_tag": null
       }
     ]
   }

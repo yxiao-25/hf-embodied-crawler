@@ -1,0 +1,44 @@
+name: Weekly Influencers & Projects
+
+on:
+  schedule:
+    # UTC 02:00 = 北京时间 10:00（每周一）
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 允许用 GITHUB_TOKEN 提交并推送
+
+concurrency:
+  group: crawl-data
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 抓取大V/项目写 SQLite 并导出 JSON
+        run: python ci_weekly.py
+
+      - name: 提交并推送数据
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/hf.db docs/data/influencers.json docs/data/network.json docs/data/projects.json
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore: 更新大V/项目数据 ($(date -u +%F))"
+            git push
+          fi

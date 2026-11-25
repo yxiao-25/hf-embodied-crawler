@@ -15,7 +15,8 @@ export_json.py —— 把 SQLite 数据库导出成静态 JSON 文件（供 GitH
       docs/data/projects.json     任务3 热门项目
 
 用法：
-    python export_json.py
+    python export_json.py                       # 导出全部 4 个
+    export_json.export_files(["trending"])      # 只导出指定几个（云端每日/每周分别用）
 """
 
 import json
@@ -46,23 +47,30 @@ def projects_payload():
     return rows
 
 
-def export_all():
+# 文件名 → 生成数据的函数（惰性调用：只算真正要导出的那几个）
+PAYLOADS = {
+    "trending": ("trending.json", trending_payload),
+    "influencers": ("influencers.json", analysis.degree_stats),
+    "network": ("network.json", analysis.network_edges),
+    "projects": ("projects.json", projects_payload),
+}
+
+
+def export_files(names):
+    """导出指定 JSON 文件。names 是 ['trending','influencers','network','projects'] 的子集。"""
     out_dir = os.path.join(config.BASE_DIR, "docs", "data")
     os.makedirs(out_dir, exist_ok=True)
-
-    payloads = {
-        "trending.json": trending_payload(),
-        "influencers.json": analysis.degree_stats(),
-        "network.json": analysis.network_edges(),
-        "projects.json": projects_payload(),
-    }
-
-    for name, data in payloads.items():
-        path = os.path.join(out_dir, name)
+    for name in names:
+        fname, fn = PAYLOADS[name]
+        path = os.path.join(out_dir, fname)
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"  已导出 {name}")
+            json.dump(fn(), f, ensure_ascii=False, indent=2)
+        print(f"  已导出 {fname}")
 
+
+def export_all():
+    """导出全部 4 个 JSON（本地一次性导出用）。"""
+    export_files(list(PAYLOADS.keys()))
     print("完成：4 个 JSON 文件已写入 docs/data/")
 
 

@@ -10,7 +10,7 @@ permissions:
   contents: write   # 允许用 GITHUB_TOKEN 提交并推送
 
 concurrency:
-  group: daily-trending
+  group: crawl-data
   cancel-in-progress: false
 
 jobs:
@@ -28,14 +28,14 @@ jobs:
       - name: 安装依赖
         run: pip install requests
 
-      - name: 抓取当天 Trending 并更新 JSON
+      - name: 抓取当天 Trending 写 SQLite 并导出 JSON
         run: python ci_daily.py
 
       - name: 提交并推送数据
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/trending.json
+          git add data/hf.db docs/data/trending.json
           if git diff --cached --quiet; then
             echo "数据无变化，跳过提交"
           else

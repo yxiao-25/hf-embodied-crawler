@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-crawler_influencers.py —— 任务2：具身智能领域 Top10 大V（只做个人）+ 关注网络
+crawler_influencers.py —— 任务2：具身智能领域 Top10 大V + 关注网络
 
 用法：
     python crawler_influencers.py
@@ -8,7 +8,7 @@ crawler_influencers.py —— 任务2：具身智能领域 Top10 大V（只做�
 核心逻辑（调用流）：
     1. collect_candidates  对每个具身智能 pipeline_tag 用 filter 列模型，is_embodied 过滤噪音，
        收集「作者」去重
-    2. fetch_user_meta     访问每个作者主页 HTML，提取 fullname / 粉丝数 / 是否组织
+    2. fetch_user_meta     访问每个作者主页 HTML，提取 fullname / 粉丝数 / 账号类型
     3. 只保留个人账号，按粉丝数排序 → Top10 大V
     4. 关注网络：对这 10 人分别抓 following（出度）+ followers（入度），构成人脉网，
        全部边存进 follow_edges（from_user → to_user 表示「from 关注了 to」）
@@ -16,10 +16,9 @@ crawler_influencers.py —— 任务2：具身智能领域 Top10 大V（只做�
 
 关键点（HuggingFace 官方站，实测）：
     - 粉丝总数：/api/users/{name} 接口 404，但主页 HTML 里内嵌 "followerCount":数字，
-      用正则从 HTML 提取，组织和个人都能拿到。
-    - 关注列表：个人账号 /api/users/{name}/following 和 /followers 都可用；
-      组织是 /api/organizations/{name}/followers 可用、following 404（组织不关注别人）。
-      本项目按学长要求「只做个人」，所以只用 /api/users/ 前缀。
+      用正则从 HTML 提取。
+    - 关注列表：个人账号 /api/users/{name}/following 和 /followers 两个接口，
+      分别对应出度（关注了谁）和入度（被谁关注）。
     - 具身智能关键词统一定义在 config.py（config.EMBODIED_PIPELINE_TAGS /
       config.EMBODIED_TAG_KEYWORDS / config.is_embodied），任务2/任务3 共用。
 """
@@ -71,7 +70,7 @@ def collect_candidates(client):
 
 def fetch_user_meta(client, username):
     """
-    访问用户主页 HTML，提取 fullname / 粉丝数 / 是否组织。
+    访问用户主页 HTML，提取 fullname / 粉丝数 / 账号类型。
     返回 dict：{username, fullname, follower_count, type}。
     """
     raw = client.get_text("/" + username)
@@ -88,7 +87,7 @@ def fetch_user_meta(client, username):
     fc = re.search(r'"followerCount":(\d+)', unescaped)
     follower_count = int(fc.group(1)) if fc else 0
 
-    # 是否组织：主页里会出现 /organizations/<username> 的链接
+    # 账号类型：主页里出现 /organizations/<username> 链接的是组织账号（据此排除，只保留个人）
     is_org = f"/organizations/{username}" in raw
 
     return {
@@ -149,12 +148,12 @@ def main():
         if i % 10 == 0:
             print(f"    进度 {i}/{total} ...")
 
-    # 只做个人：排除组织，按粉丝数取 Top10 大V
+    # 排除组织账号，按粉丝数取 Top10 大V（只保留个人）
     individuals = [m for m in metas if m["type"] == "user"]
     individuals.sort(key=lambda x: -x["follower_count"])
     top10 = individuals[: config.TOP_INFLUENCERS]
 
-    print("【3/4】Top10 大V（只做个人账号）：")
+    print("【3/4】Top10 大V：")
     for i, m in enumerate(top10, 1):
         print(f"    #{i:2d} {m['username']:<28} 粉丝={m['follower_count']}  ({m['fullname']})")
 

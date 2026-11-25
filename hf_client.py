@@ -49,7 +49,7 @@ class HFClient:
                 self._last_request_time = time.time()
                 if resp.status_code == 200:
                     return resp
-                # 503 表示镜像站后端过载，多等一会儿再试；其他错误按次数退避
+                # 503/502 表示服务端过载，多等一会儿再试；其他错误按次数退避
                 wait = 10 if resp.status_code in (503, 502) else attempt * 2
                 print(f"    [警告] {path} 返回 HTTP {resp.status_code}（第 {attempt}/{config.MAX_RETRIES} 次，等 {wait}s）")
             except requests.RequestException as exc:
