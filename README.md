@@ -2,9 +2,7 @@
 
 爬取 HuggingFace 的 Trending 榜单、具身智能领域大V 关注网络、最火热的具身智能项目，整理到 SQLite 数据库，并展示成网页。
 
-> **两种使用方式**
-> - **云端托管版（推荐，零维护）**：网页部署在 GitHub Pages，由 GitHub Actions 自动抓取数据并更新（Trending 每天、大V/项目每周），你电脑开关机、翻不翻墙都不影响。直接打开：`https://<你的用户名>.github.io/<仓库名>/`
-> - **本地运行版（学习/调试用）**：Flask + SQLite，跑在自己电脑上，需要开翻墙代理。
+> **使用方式（云端托管，零维护）**：网页部署在 GitHub Pages，由 GitHub Actions 自动抓取数据并更新（Trending 每天、大V/项目每周），你电脑开关机、翻不翻墙都不影响。直接打开：`https://<你的用户名>.github.io/<仓库名>/`
 
 ## 功能
 
@@ -36,7 +34,6 @@ GitHub Actions
 - **Python 3.13** · 一门语言贯穿全项目
 - **requests** · HTTP 请求
 - **sqlite3**（内置）· 数据库，单文件零配置
-- **Flask** · 本地网页后端
 - **ECharts**（本地化）· 图表
 - **GitHub Actions + Pages** · 云端定时采集 + 静态网页托管
 
@@ -50,8 +47,6 @@ GitHub Actions
 ├── crawler_influencers.py # 任务2：大V + 关注网络
 ├── crawler_projects.py    # 任务3：热门具身智能项目
 ├── analysis.py            # 分析层：Top10 大V + 网络边（读库，供网页用）
-├── app.py                 # Flask 网页后端（本地版）
-├── run_daily.py           # 本地每日采集入口（写 SQLite，配合 Windows 计划任务）
 ├── export_json.py         # 把 SQLite 导出成 docs/data/*.json（供云端网页）
 ├── ci_daily.py            # GitHub Actions 每日入口（任务1：写 SQLite → 导出 trending.json）
 ├── ci_weekly.py           # GitHub Actions 每周入口（任务2/3：写 SQLite → 导出 3 个 JSON）
@@ -61,33 +56,26 @@ GitHub Actions
 │   ├── index.html         #   网页（读 data/*.json）
 │   ├── echarts.min.js     #   ECharts（本地化）
 │   └── data/*.json        #   4 块数据（trending/influencers/network/projects）
-├── templates/index.html   # 本地 Flask 版网页（读 /api/*）
-├── static/echarts.min.js  # 本地 ECharts
 └── data/hf.db             # SQLite 数据库（提交到仓库，作为长期存储 / 数据源）
 ```
 
-## 本地运行
+## 手动抓取（可选）
+
+正常情况下数据由云端 GitHub Actions 自动抓取，无需手动操作。如果要在自己电脑上重新抓一遍数据：
 
 ```bash
-# 1. 安装依赖
 pip install -r requirements.txt
 
-# 2. 依次运行三个爬虫，抓数据入库（需开全局代理，连官方站 huggingface.co）
+# 需开全局代理，连官方站 huggingface.co
 python crawler_trending.py       # 任务1
 python crawler_influencers.py    # 任务2（较慢，需几分钟）
 python crawler_projects.py       # 任务3
-
-# 3. 导出云端版数据（可选，用于更新 docs/data/*.json）
-python export_json.py
-
-# 4. 启动本地网页
-python app.py
-# 浏览器打开 http://127.0.0.1:5000
+python export_json.py            # 导出 docs/data/*.json
 ```
 
 ## 数据说明
 
-- **官方站 + 代理**：本地运行数据直接来自 HuggingFace 官方站 `huggingface.co`，需要开全局代理（翻墙）访问；云端 GitHub Actions 无需代理。
+- **官方站 + 代理**：手动抓取的数据直接来自 HuggingFace 官方站 `huggingface.co`，需要开全局代理（翻墙）访问；云端 GitHub Actions 无需代理。
 - **一周 Trending**：HF 不提供历史按天数据，采用「每日快照」，库里只保留最近 7 天。
 
 ## License
