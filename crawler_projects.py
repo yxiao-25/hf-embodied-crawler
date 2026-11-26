@@ -57,10 +57,11 @@ def extract_github_urls(readme):
     会过滤掉 user-attachments 等图片附件，保留源码仓库地址，并去重保序。
     """
     urls = []
-    for m in re.finditer(r"https?://github\.com/([^/\s\"'<>)\]]+/[^/\s\"'<>)\]]+)", readme):
+    for m in re.finditer(r"https?://(?:www\.)?github\.com/([^/\s\"'<>)\]]+/[^/\s\"'<>)\]]+)", readme):
         url = m.group(0).rstrip(".,;:!?)")
         if "user-attachments" in url or "/assets/" in url:
             continue
+        url = re.sub(r"\.git$", "", url).rstrip("/")
         urls.append(url)
     seen, result = set(), []
     for u in urls:
@@ -70,22 +71,43 @@ def extract_github_urls(readme):
     return result
 
 
+def _is_meaningless_space(space_id):
+    """过滤掉「排行榜/基准/测量」这类非演示 Space。"""
+    s = (space_id or "").lower()
+    return any(k in s for k in ("leaderboard", "benchmark", "measurement", "evaluat", "metric"))
+
+
 def find_space_url(detail, author, readme=""):
     """
-    确定 HF Space 链接（项目的官方演示 Space，宁缺毋滥）：
-    1) 从模型详情 spaces（「使用此模型的 Space」）里挑作者本人名下的（owner == author）；
-    2) 否则从 README 里正则提取 huggingface.co/spaces/... 链接；
-    3) 都没有就返回 None（不拿随机社区 Space 凑数）。
+    确定 HF Space 链接（优先官方演示，其次社区演示）：
+    1) 作者本人名下的 Space（最可能是官方 demo）；
+    2) README 里 huggingface.co/spaces/... 链接；
+    3) 都没有就退回「使用此模型的 Space」里第一个非排行榜类社区演示；
+    4) 实在没有才返回 None。
     """
-    # 1) 作者本人名下的 Space（最可能是官方 demo）
+    spaces = []
     for s in (detail.get("spaces") or []):
-        space_id = s.get("id") if isinstance(s, dict) else str(s)
-        if space_id and space_id.split("/")[0] == author:
-            return f"https://huggingface.co/spaces/{space_id}"
+        sid = s.get("id") if isinstance(s, dict) else str(s)
+        if sid:
+            spaces.append(sid)
+
+    # 1) 作者本人名下的 Space
+    for sid in spaces:
+        if sid.split("/")[0] == author:
+            return f"https://huggingface.co/spaces/{sid}"
     # 2) README 里的 Space 链接
     links = re.findall(r"https?://[a-zA-Z0-9.-]*huggingface\.co/spaces/([^\s)\"'<>]+)", readme)
     if links:
         return f"https://huggingface.co/spaces/{links[0].rstrip('.,;:!?')}"
+    # 3) 社区演示（过滤排行榜/基准类，优先名字含模型「主干名」的）
+    short = (detail.get("id") or "").split("/")[-1].lower()
+    stem = re.split(r"[-_.]", short)[0]  # 如 alpamayo-r1-10b -> alpamayo，去掉版本/尺寸后缀
+    candidates = [s for s in spaces if not _is_meaningless_space(s)]
+    for s in candidates:
+        if stem and stem in s.lower():
+            return f"https://huggingface.co/spaces/{s}"
+    if candidates:
+        return f"https://huggingface.co/spaces/{candidates[0]}"
     return None
 
 

@@ -87,6 +87,11 @@ def fetch_user_meta(client, username):
     fc = re.search(r'"followerCount":(\d+)', unescaped)
     follower_count = int(fc.group(1)) if fc else 0
 
+    # 关注数（全平台）：主页里 numFollowingUsers + numFollowingOrgs 分别是「关注的人 + 关注的组织」
+    fu = re.search(r'"numFollowingUsers":(\d+)', unescaped)
+    fo = re.search(r'"numFollowingOrgs":(\d+)', unescaped)
+    following_count = (int(fu.group(1)) if fu else 0) + (int(fo.group(1)) if fo else 0)
+
     # 账号类型：主页里出现 /organizations/<username> 链接的是组织账号（据此排除，只保留个人）
     is_org = f"/organizations/{username}" in raw
 
@@ -94,6 +99,7 @@ def fetch_user_meta(client, username):
         "username": username,
         "fullname": fullname,
         "follower_count": follower_count,
+        "following_count": following_count,
         "type": "org" if is_org else "user",
     }
 
@@ -169,7 +175,6 @@ def main():
         except Exception as exc:
             following = []
             print(f"    {name} 关注列表抓取失败：{exc}")
-        m["following_count"] = len(following)
         for f in following:
             key = (name, f)
             if key not in seen_edges:

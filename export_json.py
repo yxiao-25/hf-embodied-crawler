@@ -10,7 +10,7 @@ export_json.py —— 把 SQLite 数据库导出成静态 JSON 文件（供 GitH
 
     导出结果（与 Flask 各接口返回的 JSON 结构完全一致）：
       docs/data/trending.json     任务1 按天 Trending
-      docs/data/influencers.json  任务2 大V + 入度/出度统计
+      docs/data/influencers.json  任务2 Top10 大V（全平台粉丝/关注数）
       docs/data/network.json      任务2 关注网络边
       docs/data/projects.json     任务3 热门项目
 
@@ -50,7 +50,7 @@ def projects_payload():
 # 文件名 → 生成数据的函数（惰性调用：只算真正要导出的那几个）
 PAYLOADS = {
     "trending": ("trending.json", trending_payload),
-    "influencers": ("influencers.json", analysis.degree_stats),
+    "influencers": ("influencers.json", analysis.influencer_stats),
     "network": ("network.json", analysis.network_edges),
     "projects": ("projects.json", projects_payload),
 }

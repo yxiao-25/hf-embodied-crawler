@@ -10,7 +10,7 @@ app.py —— Flask 网页后端
     1. 提供首页 /（渲染 templates/index.html）
     2. 提供几个 JSON 数据接口，前端(index.html)用 fetch 拉取后交给 ECharts 渲染：
        - /api/trending      任务1：按天分组的 Trending 榜单
-       - /api/influencers   任务2：大V + 入度/出度统计
+       - /api/influencers   任务2：Top10 大V（全平台粉丝/关注数）
        - /api/network       任务2：关注网络边
        - /api/projects      任务3：热门具身智能项目
 """
@@ -44,8 +44,8 @@ def api_trending():
 
 @app.route("/api/influencers")
 def api_influencers():
-    """任务2：返回大V列表 + 三个度数榜单。"""
-    return jsonify(analysis.degree_stats())
+    """任务2：返回 Top10 大V（含全平台粉丝数/关注数）。"""
+    return jsonify(analysis.influencer_stats())
 
 
 @app.route("/api/network")

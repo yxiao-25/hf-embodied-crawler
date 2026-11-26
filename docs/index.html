@@ -154,13 +154,11 @@
 <div class="wrap">
   <header>
     <h1>HuggingFace 具身智能 · 数据展示</h1>
-    <p>数据来源：HuggingFace 官方站（huggingface.co）· 每天由 GitHub Actions 自动抓取 · 展示：GitHub Pages + ECharts</p>
   </header>
 
   <!-- 任务1：一周 Trending -->
   <section>
     <h2>一、一周 Trending 榜单</h2>
-    <p class="sub">每天自动抓取一次 HF 热门模型榜单，按天展示（需要连续运行 7 天才会累积满一周）。</p>
     <div class="tabs" id="trending-tabs"></div>
     <div id="trending-body"><div class="loading">加载中…</div></div>
   </section>
@@ -168,25 +166,15 @@
   <!-- 任务2：大V + 关注网络 -->
   <section>
     <h2>二、具身智能 Top10 大V 与关注网络</h2>
-    <p class="sub">具身智能领域粉丝数最多的 10 个账号（个人账号），以及他们之间的关注网络。</p>
     <div id="influencer-table"></div>
     <div class="champs" id="champs"></div>
     <h2 style="font-size:15px; margin-top:6px;">关注网络（大V 的关注 + 粉丝）</h2>
     <div id="network-chart" class="chart tall"></div>
-    <p class="note">节点越大表示粉丝越多。蓝色 = Top10 大V，橙色 = 其他账号。边 = 关注关系（大V → 被关注者 / 粉丝 → 大V）。</p>
-  </section>
-
-  <!-- 任务2 统计排行 -->
-  <section>
-    <h2>三、入度 / 出度 / 总和 排行</h2>
-    <p class="sub">在「具身智能作者圈内」统计：入度 = 被多少个圈内作者关注 · 出度 = 关注了多少个圈内作者 · 总和 = 两者之和。</p>
-    <div id="degree-chart" class="chart"></div>
-    <div id="degree-table" style="margin-top:14px;"></div>
   </section>
 
   <!-- 任务3：热门项目 -->
   <section>
-    <h2>四、最火热的 10 个具身智能项目</h2>
+    <h2>三、最火热的 10 个具身智能项目</h2>
     <p class="sub">用官方标签（robotics / VLA / manipulation 等）识别，附开源 GitHub 链接与 HuggingFace Space。</p>
     <div class="projects" id="projects"><div class="loading">加载中…</div></div>
   </section>
@@ -258,33 +246,32 @@ function renderTrendingTable(date, rows) {
 async function renderInfluencers() {
   const stats = await fetchJSON('data/influencers.json');
   renderInfluencerTable(stats.top_influencers || []);
-  const inTop = (stats.in_degree_top || [])[0];
-  const outTop = (stats.out_degree_top || [])[0];
-  const totTop = (stats.total_degree_top || [])[0];
-  const champs = document.getElementById('champs');
-  if (!inTop && !outTop && !totTop) {
-    champs.innerHTML = '<div class="loading">暂无关注关系数据</div>';
-  } else {
-    champs.innerHTML = `
-      <div class="champ"><div class="label">圈内入度最多（被关注）</div>
-        <div class="name">${esc(inTop && inTop.username)}</div>
-        <div class="value">${fmt(inTop && inTop.in_degree)}<small> 圈内被关注</small></div></div>
-      <div class="champ"><div class="label">圈内出度最多（关注）</div>
-        <div class="name">${esc(outTop && outTop.username)}</div>
-        <div class="value">${fmt(outTop && outTop.out_degree)}<small> 圈内关注</small></div></div>
-      <div class="champ"><div class="label">圈内入度 + 出度最多</div>
-        <div class="name">${esc(totTop && totTop.username)}</div>
-        <div class="value">${fmt(totTop && totTop.total_degree)}<small> 总和</small></div></div>`;
-  }
-  renderDegreeChart(stats);
-  renderDegreeTable(stats);
+  renderChamps(stats.top_influencers || []);
+}
+
+function renderChamps(rows) {
+  const el = document.getElementById('champs');
+  if (!rows.length) { el.innerHTML = ''; return; }
+  const byFollowers = rows.slice().sort((a, b) => (b.follower_count || 0) - (a.follower_count || 0))[0];
+  const byFollowing = rows.slice().sort((a, b) => (b.following_count || 0) - (a.following_count || 0))[0];
+  const bySum = rows.slice().sort((a, b) => ((b.follower_count || 0) + (b.following_count || 0)) - ((a.follower_count || 0) + (a.following_count || 0)))[0];
+  el.innerHTML = `
+    <div class="champ"><div class="label">全平台粉丝最多（被关注）</div>
+      <div class="name">${esc(byFollowers.username)}</div>
+      <div class="value">${fmt(byFollowers.follower_count)}<small> 全平台粉丝</small></div></div>
+    <div class="champ"><div class="label">全平台关注最多</div>
+      <div class="name">${esc(byFollowing.username)}</div>
+      <div class="value">${fmt(byFollowing.following_count)}<small> 全平台关注</small></div></div>
+    <div class="champ"><div class="label">全平台粉丝 + 关注最多</div>
+      <div class="name">${esc(bySum.username)}</div>
+      <div class="value">${fmt((bySum.follower_count || 0) + (bySum.following_count || 0))}<small> 总和</small></div></div>`;
 }
 
 function renderInfluencerTable(rows) {
   const el = document.getElementById('influencer-table');
   if (!rows.length) { el.innerHTML = ''; return; }
   let html = `<table><thead><tr>
-    <th>#</th><th>账号</th><th>全称</th><th>类型</th>
+    <th>#</th><th>账号</th><th>全称</th>
     <th class="num">粉丝数</th><th class="num">关注数</th>
   </tr></thead><tbody>`;
   rows.forEach((r, i) => {
@@ -292,7 +279,6 @@ function renderInfluencerTable(rows) {
       <td>${i + 1}</td>
       <td class="mono">${esc(r.username)}</td>
       <td>${esc(r.fullname || '')}</td>
-      <td>${r.type === 'org' ? '组织' : '个人'}</td>
       <td class="num">${fmt(r.follower_count)}</td>
       <td class="num">${r.following_count == null ? '—' : fmt(r.following_count)}</td>
     </tr>`;
@@ -308,7 +294,7 @@ async function renderNetwork() {
 
   const p = palette();
   const stats = await fetchJSON('data/influencers.json');
-  const big = new Map();   // 大V：username -> 全网粉丝数（决定节点大小）
+  const big = new Map();   // 大V：username -> 全平台粉丝数（决定节点大小）
   (stats.top_influencers || []).forEach(x => big.set(x.username, x.follower_count || 10));
 
   const nodes = new Map();
@@ -331,8 +317,7 @@ async function renderNetwork() {
       force: { repulsion: 60, edgeLength: 40, gravity: 0.2 },
       label: { show: true, fontSize: 10, color: p.text,
         formatter: p2 => p2.data.category === 0 ? p2.data.name : '' },
-      categories: [{ name: '大V', itemStyle: { color: p.s1 } },
-                   { name: '其他账号', itemStyle: { color: p.s2 } }],
+      itemStyle: { color: p.s1 },
       data: [...nodes.values()],
       links,
       emphasis: { focus: 'adjacency', lineStyle: { width: 3 } },
@@ -341,48 +326,6 @@ async function renderNetwork() {
     }]
   });
   window.addEventListener('resize', () => chart.resize());
-}
-
-// ===== 任务2：入度/出度 柱状图 =====
-function renderDegreeChart(stats) {
-  const p = palette();
-  const list = (stats.in_degree_top || []).filter(x => x.in_degree > 0 || x.out_degree > 0);
-  if (!list.length) { document.getElementById('degree-chart').innerHTML = '<div class="loading">暂无关注关系数据</div>'; return; }
-  const top = list.slice(0, 10).reverse(); // 反转让最大的在顶部
-  const chart = echarts.init(document.getElementById('degree-chart'));
-  chart.setOption({
-    backgroundColor: p.surface,
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-    legend: { data: ['入度(圈内被关注)', '出度(圈内关注)'], textStyle: { color: p.muted }, top: 0 },
-    grid: { left: 140, right: 30, top: 36, bottom: 24 },
-    xAxis: { type: 'value', axisLine: { lineStyle: { color: p.muted } }, splitLine: { lineStyle: { color: p.grid } }, axisLabel: { color: p.muted } },
-    yAxis: { type: 'category', data: top.map(x => x.username), axisLine: { lineStyle: { color: p.muted } }, axisLabel: { color: p.text, fontSize: 12 } },
-    series: [
-      { name: '入度(圈内被关注)', type: 'bar', data: top.map(x => x.in_degree), itemStyle: { color: p.s1 }, barMaxWidth: 16 },
-      { name: '出度(圈内关注)', type: 'bar', data: top.map(x => x.out_degree), itemStyle: { color: p.s3 }, barMaxWidth: 16 },
-    ]
-  });
-  window.addEventListener('resize', () => chart.resize());
-}
-
-function renderDegreeTable(stats) {
-  const el = document.getElementById('degree-table');
-  const rows = stats.total_degree_top || [];
-  let html = `<table><thead><tr>
-    <th>账号</th><th>类型</th><th class="num">全网粉丝</th><th class="num">入度(圈内被关注)</th><th class="num">出度(圈内关注)</th><th class="num">总和</th>
-  </tr></thead><tbody>`;
-  rows.forEach(r => {
-    html += `<tr>
-      <td class="mono">${esc(r.username)}</td>
-      <td>${r.type === 'org' ? '组织' : '个人'}</td>
-      <td class="num">${fmt(r.follower_count)}</td>
-      <td class="num">${fmt(r.in_degree)}</td>
-      <td class="num">${fmt(r.out_degree)}</td>
-      <td class="num">${fmt(r.total_degree)}</td>
-    </tr>`;
-  });
-  html += '</tbody></table>';
-  el.innerHTML = html;
 }
 
 // ===== 任务3：项目卡片 =====
@@ -397,8 +340,9 @@ async function renderProjects() {
       ${r.description ? `<div class="desc">${esc(r.description)}</div>` : ''}
       <div class="tags">${(r.tags || []).slice(0, 6).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
       <div class="links">
+        <a href="https://huggingface.co/${esc(r.model_id)}" target="_blank">模型 ↗</a>
         ${r.github_url ? `<a href="${esc(r.github_url)}" target="_blank">GitHub ↗</a>` : ''}
-        ${r.space_url ? `<a href="${esc(r.space_url)}" target="_blank">HuggingFace Space ↗</a>` : ''}
+        ${r.space_url ? `<a href="${esc(r.space_url)}" target="_blank">Space ↗</a>` : ''}
       </div>
     </div>`).join('');
 }

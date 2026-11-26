@@ -10,15 +10,15 @@
 
 | # | 功能 | 说明 |
 |---|------|------|
-| 1 | 一周 Trending 按天展示 | 每日快照 HF 热门模型榜单，按天分组展示（连续 7 天累积满一周） |
-| 2 | 具身智能 Top10 大V + 关注网络 | 粉丝数 Top10 的具身智能个人账号，抓取个人账号之间的关注网络，统计入度/出度/总和最高的人 |
-| 3 | 最火热的 10 个具身智能项目 | 用官方标签识别，提取 GitHub 链接与 HuggingFace Space |
-| 4 | 网页展示 | ECharts，含网络图、柱状图、榜单表格 |
+| 1 | 一周 Trending 按天展示 | 每日快照 HF 热门模型榜单，按天分组展示 |
+| 2 | 具身智能 Top10 大V + 关注网络 | 粉丝数 Top10 的具身智能个人账号，展示全平台粉丝数/关注数，并画出关注网络|
+| 3 | 最火热的 10 个具身智能项目 | 官方标签识别，提取 GitHub 链接与 HuggingFace Space |
+| 4 | 网页展示 | ECharts，含关注网络图、榜单表格、项目卡片（附模型 / GitHub / Space 链接） |
 
-## 云端自动更新是怎么工作的
+## 云端自动更新
 
 ```
-GitHub Actions（美国服务器，免翻墙）
+GitHub Actions
    ├─ 每天 09:00（北京时间）跑 ci_daily.py（任务1 Trending）
    │     1. 抓当天 Trending 写进 SQLite（只保留最近 7 天）
    │     2. 从 SQLite 导出 docs/data/trending.json
@@ -27,13 +27,9 @@ GitHub Actions（美国服务器，免翻墙）
          1. 抓大V关注网络 + 热门项目，写进 SQLite（清空重写）
          2. 从 SQLite 导出 influencers/network/projects.json
          3. commit data/hf.db + 三个 JSON → push
-   → GitHub Pages 自动重新部署网页（任何人随时可打开）
+   → GitHub Pages 自动重新部署网页
 ```
 
-- **为什么不用翻墙**：GitHub Actions 的运行环境在美国，直接访问 `huggingface.co` 是通的。
-- **为什么数据不会丢**：CI 环境没有持久化磁盘，所以 `data/hf.db`（SQLite）和 `docs/data/*.json`（网页读的导出）都以文件形式提交在仓库里，天然持久化、可回溯。
-- **SQLite 是源、JSON 是导出**：三个任务都先写 SQLite，再导出 JSON 给静态网页读（浏览器读不了 SQLite）。这也是 `data/hf.db` 会提交进仓库的原因。
-- **Trending 只留 7 天**：题目只要「一周」，所以每天追加后会把 7 天以前的老数据删掉。
 
 ## 技术栈
 
@@ -53,7 +49,7 @@ GitHub Actions（美国服务器，免翻墙）
 ├── crawler_trending.py    # 任务1：每日 Trending 快照（crawl_trending 被本地/云端复用，只留最近 7 天）
 ├── crawler_influencers.py # 任务2：大V + 关注网络
 ├── crawler_projects.py    # 任务3：热门具身智能项目
-├── analysis.py            # 入度/出度统计
+├── analysis.py            # 分析层：Top10 大V + 网络边（读库，供网页用）
 ├── app.py                 # Flask 网页后端（本地版）
 ├── run_daily.py           # 本地每日采集入口（写 SQLite，配合 Windows 计划任务）
 ├── export_json.py         # 把 SQLite 导出成 docs/data/*.json（供云端网页）
@@ -92,8 +88,7 @@ python app.py
 ## 数据说明
 
 - **官方站 + 代理**：本地运行数据直接来自 HuggingFace 官方站 `huggingface.co`，需要开全局代理（翻墙）访问；云端 GitHub Actions 无需代理。
-- **一周 Trending**：HF 不提供历史按天数据，采用「每日快照」——每天跑一次存当天榜单；库里只保留最近 7 天，正好凑成一周。
-- **粉丝数来源**：`/api/users/{name}` 接口返回 404，粉丝数改从作者主页 HTML 里内嵌的 `"followerCount"` 字段用正则提取。
+- **一周 Trending**：HF 不提供历史按天数据，采用「每日快照」，库里只保留最近 7 天。
 
 ## License
 

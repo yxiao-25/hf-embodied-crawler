@@ -16,8 +16,8 @@
       "license:apache-2.0",
       "region:us"
     ],
-    "downloads": 124897,
-    "likes": 500,
+    "downloads": 117417,
+    "likes": 502,
     "github_url": "https://github.com/huggingface/lerobot",
     "space_url": "https://huggingface.co/spaces/lerobot/robot-learning-tutorial",
     "keywords_matched": "vision-language-action,imitation-learning,lerobot,robot,robotics"
@@ -40,10 +40,10 @@
       "endpoints_compatible",
       "region:us"
     ],
-    "downloads": 7158,
-    "likes": 447,
+    "downloads": 6175,
+    "likes": 448,
     "github_url": "https://github.com/NVlabs/alpamayo",
-    "space_url": null,
+    "space_url": "https://huggingface.co/spaces/PSM24/alpamayo-r1-test",
     "keywords_matched": "robot,robotics"
   },
   {
@@ -63,8 +63,8 @@
       "region:us",
       "deploy:azure"
     ],
-    "downloads": 924,
-    "likes": 425,
+    "downloads": 929,
+    "likes": 426,
     "github_url": "https://github.com/microsoft/Magma",
     "space_url": "https://huggingface.co/spaces/microsoft/Magma-UI",
     "keywords_matched": "robot,robotics"
@@ -84,7 +84,7 @@
       "eval-results",
       "region:us"
     ],
-    "downloads": 517,
+    "downloads": 547,
     "likes": 359,
     "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
     "space_url": null,
@@ -102,7 +102,7 @@
       "license:apache-2.0",
       "region:us"
     ],
-    "downloads": 389,
+    "downloads": 395,
     "likes": 311,
     "github_url": "https://github.com/huggingface/lerobot",
     "space_url": "https://huggingface.co/spaces/lerobot/visualize_dataset?dataset=danaaubakirova%2Fkoch_test&episode=0",
@@ -128,11 +128,29 @@
       "license:mit",
       "region:us"
     ],
-    "downloads": 64854,
-    "likes": 267,
+    "downloads": 64251,
+    "likes": 268,
     "github_url": "https://github.com/openvla/openvla",
-    "space_url": null,
+    "space_url": "https://huggingface.co/spaces/Allwin473/OpenVLA",
     "keywords_matched": "vla,robot,robotics"
+  },
+  {
+    "model_id": "nvidia/GR00T-N1.7-3B",
+    "title": "nvidia/GR00T-N1.7-3B",
+    "description": "license: other license_name: nvidia-open-model-license license_link: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ tags: - robotics -- style=\"width:100%; max-w",
+    "tags": [
+      "safetensors",
+      "Gr00tN1d7",
+      "robotics",
+      "arxiv:2503.14734",
+      "license:other",
+      "region:us"
+    ],
+    "downloads": 51386,
+    "likes": 202,
+    "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
+    "space_url": "https://huggingface.co/spaces/NoriRobotics/groot-serve",
+    "keywords_matched": "robot,robotics"
   },
   {
     "model_id": "nvidia/GR00T-N1.5-3B",
@@ -148,26 +166,8 @@
       "arxiv:2410.24164",
       "region:us"
     ],
-    "downloads": 1964,
+    "downloads": 2104,
     "likes": 199,
-    "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
-    "space_url": null,
-    "keywords_matched": "robot,robotics"
-  },
-  {
-    "model_id": "nvidia/GR00T-N1.7-3B",
-    "title": "nvidia/GR00T-N1.7-3B",
-    "description": "license: other license_name: nvidia-open-model-license license_link: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ tags: - robotics -- style=\"width:100%; max-w",
-    "tags": [
-      "safetensors",
-      "Gr00tN1d7",
-      "robotics",
-      "arxiv:2503.14734",
-      "license:other",
-      "region:us"
-    ],
-    "downloads": 53999,
-    "likes": 195,
     "github_url": "https://github.com/NVIDIA/Isaac-GR00T",
     "space_url": null,
     "keywords_matched": "robot,robotics"
@@ -187,7 +187,7 @@
     "downloads": 0,
     "likes": 191,
     "github_url": null,
-    "space_url": null,
+    "space_url": "https://huggingface.co/spaces/zjunlp/lab-vla",
     "keywords_matched": "robot,robotics"
   },
   {
@@ -208,7 +208,7 @@
       "license:apache-2.0",
       "region:us"
     ],
-    "downloads": 472,
+    "downloads": 310,
     "likes": 191,
     "github_url": "https://github.com/OpenBMB/MiniCPM-Robot",
     "space_url": null,

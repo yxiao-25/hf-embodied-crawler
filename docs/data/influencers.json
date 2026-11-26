@@ -3,8 +3,8 @@
     {
       "username": "RemiFabre",
       "fullname": "Remi Fabre",
-      "follower_count": 209,
-      "following_count": 19,
+      "follower_count": 993,
+      "following_count": 21,
       "type": "user"
     },
     {
@@ -15,17 +15,10 @@
       "type": "user"
     },
     {
-      "username": "moojink",
-      "fullname": "Moo Jin Kim",
-      "follower_count": 80,
-      "following_count": 0,
-      "type": "user"
-    },
-    {
       "username": "robotics-diffusion-transformer",
       "fullname": "Robotics Diffusion Transformer Team",
       "follower_count": 76,
-      "following_count": 0,
+      "following_count": 1,
       "type": "user"
     },
     {
@@ -39,7 +32,7 @@
       "username": "nicklashansen",
       "fullname": "Nicklas Hansen",
       "follower_count": 18,
-      "following_count": 0,
+      "following_count": 1,
       "type": "user"
     },
     {
@@ -69,282 +62,13 @@
       "follower_count": 13,
       "following_count": 0,
       "type": "user"
-    }
-  ],
-  "in_degree_top": [
-    {
-      "username": "rail-berkeley",
-      "fullname": "RAIL Berkeley",
-      "type": "user",
-      "follower_count": 100,
-      "in_degree": 100,
-      "out_degree": 0,
-      "total_degree": 100
     },
     {
-      "username": "moojink",
-      "fullname": "Moo Jin Kim",
-      "type": "user",
-      "follower_count": 80,
-      "in_degree": 80,
-      "out_degree": 0,
-      "total_degree": 80
-    },
-    {
-      "username": "RemiFabre",
-      "fullname": "Remi Fabre",
-      "type": "user",
-      "follower_count": 209,
-      "in_degree": 77,
-      "out_degree": 19,
-      "total_degree": 96
-    },
-    {
-      "username": "robotics-diffusion-transformer",
-      "fullname": "Robotics Diffusion Transformer Team",
-      "type": "user",
-      "follower_count": 76,
-      "in_degree": 76,
-      "out_degree": 0,
-      "total_degree": 76
-    },
-    {
-      "username": "VLA-Adapter",
-      "fullname": "VLA-Adapter",
-      "type": "user",
-      "follower_count": 70,
-      "in_degree": 70,
-      "out_degree": 1,
-      "total_degree": 71
-    },
-    {
-      "username": "nicklashansen",
-      "fullname": "Nicklas Hansen",
-      "type": "user",
-      "follower_count": 18,
-      "in_degree": 18,
-      "out_degree": 0,
-      "total_degree": 18
-    },
-    {
-      "username": "CogACT",
-      "fullname": "CogACT",
-      "type": "user",
-      "follower_count": 16,
-      "in_degree": 16,
-      "out_degree": 0,
-      "total_degree": 16
-    },
-    {
-      "username": "MirilAI",
-      "fullname": "Miril AI Labs",
-      "type": "user",
-      "follower_count": 16,
-      "in_degree": 16,
-      "out_degree": 0,
-      "total_degree": 16
-    },
-    {
-      "username": "GEAR-Dreams",
-      "fullname": "Dreaming Zebra",
-      "type": "user",
-      "follower_count": 15,
-      "in_degree": 15,
-      "out_degree": 0,
-      "total_degree": 15
-    },
-    {
-      "username": "eloialonso",
-      "fullname": "Eloi Alonso",
-      "type": "user",
-      "follower_count": 13,
-      "in_degree": 13,
-      "out_degree": 0,
-      "total_degree": 13
-    }
-  ],
-  "out_degree_top": [
-    {
-      "username": "RemiFabre",
-      "fullname": "Remi Fabre",
-      "type": "user",
-      "follower_count": 209,
-      "in_degree": 77,
-      "out_degree": 19,
-      "total_degree": 96
-    },
-    {
-      "username": "Man1103",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 5,
-      "total_degree": 5
-    },
-    {
-      "username": "21world",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 5,
-      "total_degree": 5
-    },
-    {
-      "username": "gentlebowl",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 4,
-      "total_degree": 4
-    },
-    {
-      "username": "mphielipp",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 3,
-      "total_degree": 3
-    },
-    {
-      "username": "Ash444",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 3,
-      "total_degree": 3
-    },
-    {
-      "username": "CHONGYOEYAT",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 3,
-      "total_degree": 3
-    },
-    {
-      "username": "dark-pen",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 3,
-      "total_degree": 3
-    },
-    {
-      "username": "clem",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 3,
-      "total_degree": 3
-    },
-    {
-      "username": "Stars321123",
-      "fullname": null,
-      "type": null,
-      "follower_count": null,
-      "in_degree": 0,
-      "out_degree": 3,
-      "total_degree": 3
-    }
-  ],
-  "total_degree_top": [
-    {
-      "username": "rail-berkeley",
-      "fullname": "RAIL Berkeley",
-      "type": "user",
-      "follower_count": 100,
-      "in_degree": 100,
-      "out_degree": 0,
-      "total_degree": 100
-    },
-    {
-      "username": "RemiFabre",
-      "fullname": "Remi Fabre",
-      "type": "user",
-      "follower_count": 209,
-      "in_degree": 77,
-      "out_degree": 19,
-      "total_degree": 96
-    },
-    {
-      "username": "moojink",
-      "fullname": "Moo Jin Kim",
-      "type": "user",
-      "follower_count": 80,
-      "in_degree": 80,
-      "out_degree": 0,
-      "total_degree": 80
-    },
-    {
-      "username": "robotics-diffusion-transformer",
-      "fullname": "Robotics Diffusion Transformer Team",
-      "type": "user",
-      "follower_count": 76,
-      "in_degree": 76,
-      "out_degree": 0,
-      "total_degree": 76
-    },
-    {
-      "username": "VLA-Adapter",
-      "fullname": "VLA-Adapter",
-      "type": "user",
-      "follower_count": 70,
-      "in_degree": 70,
-      "out_degree": 1,
-      "total_degree": 71
-    },
-    {
-      "username": "nicklashansen",
-      "fullname": "Nicklas Hansen",
-      "type": "user",
-      "follower_count": 18,
-      "in_degree": 18,
-      "out_degree": 0,
-      "total_degree": 18
-    },
-    {
-      "username": "CogACT",
-      "fullname": "CogACT",
-      "type": "user",
-      "follower_count": 16,
-      "in_degree": 16,
-      "out_degree": 0,
-      "total_degree": 16
-    },
-    {
-      "username": "MirilAI",
-      "fullname": "Miril AI Labs",
-      "type": "user",
-      "follower_count": 16,
-      "in_degree": 16,
-      "out_degree": 0,
-      "total_degree": 16
-    },
-    {
-      "username": "GEAR-Dreams",
-      "fullname": "Dreaming Zebra",
-      "type": "user",
-      "follower_count": 15,
-      "in_degree": 15,
-      "out_degree": 0,
-      "total_degree": 15
-    },
-    {
-      "username": "eloialonso",
-      "fullname": "Eloi Alonso",
-      "type": "user",
-      "follower_count": 13,
-      "in_degree": 13,
-      "out_degree": 0,
-      "total_degree": 13
+      "username": "RobotLearningLab",
+      "fullname": "Alan-Barsag Gazzaev",
+      "follower_count": 7,
+      "following_count": 0,
+      "type": "user"
     }
   ]
 }
