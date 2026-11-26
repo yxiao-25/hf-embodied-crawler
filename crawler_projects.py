@@ -2,9 +2,6 @@
 """
 crawler_projects.py —— 任务3：最火热的 10 个具身智能项目 + GitHub/Space 链接
 
-用法：
-    python crawler_projects.py
-
 核心逻辑（调用流）：
     1. search_candidates   用关键词搜模型，收集候选去重
     2. is_embodied         用 pipeline_tag / tags 关键词判断是否「具身智能」
@@ -15,8 +12,6 @@ crawler_projects.py —— 任务3：最火热的 10 个具身智能项目 + Git
        - 确定 HF Space 链接（作者本人名下的 Space，或从 README 提取，否则留空）
     5. 存入 projects 表
 
-识别「具身智能」用官方标签（pipeline_tag=robotics 或 tags 里的关键词），
-这比 LLM 更权威、稳定，且无需任何 API key。想升级成 LLM 精筛可以后续再加。
 """
 
 import re
@@ -80,7 +75,7 @@ def _is_meaningless_space(space_id):
 def find_space_url(detail, author, readme=""):
     """
     确定 HF Space 链接（优先官方演示，其次社区演示）：
-    1) 作者本人名下的 Space（最可能是官方 demo）；
+    1) 作者本人名下的 Space；
     2) README 里 huggingface.co/spaces/... 链接；
     3) 都没有就退回「使用此模型的 Space」里第一个非排行榜类社区演示；
     4) 实在没有才返回 None。

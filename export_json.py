@@ -3,12 +3,11 @@
 export_json.py —— 把 SQLite 数据库导出成静态 JSON 文件（供 GitHub Pages 网页使用）
 
 背景：
-    本地 Flask 版网页通过 /api/* 接口实时读 SQLite；
     云端 GitHub Pages 版网页是纯静态的，读不到 SQLite，只能读 JSON 文件。
     所以需要这一步：把数据库里 4 块数据导出成 docs/data/*.json，提交到仓库，
     由 GitHub Pages 直接访问。
 
-    导出结果（与 Flask 各接口返回的 JSON 结构完全一致）：
+    导出结果：
       docs/data/trending.json     任务1 按天 Trending
       docs/data/influencers.json  任务2 Top10 大V（全平台粉丝/关注数）
       docs/data/network.json      任务2 关注网络边
@@ -28,7 +27,7 @@ import analysis
 
 
 def trending_payload():
-    """任务1：与 app.py 的 /api/trending 返回结构一致（dates + data）。"""
+    """任务1：按天分组的 Trending（dates + data）。"""
     rows = db.query_all("SELECT * FROM trending_daily ORDER BY crawl_date, rank")
     by_date = {}
     for r in rows:
@@ -37,7 +36,7 @@ def trending_payload():
 
 
 def projects_payload():
-    """任务3：与 app.py 的 /api/projects 返回结构一致（tags 还原成列表）。"""
+    """任务3：热门项目（tags 还原成列表）。"""
     rows = db.query_all("SELECT * FROM projects ORDER BY likes DESC")
     for r in rows:
         try:
@@ -69,7 +68,7 @@ def export_files(names):
 
 
 def export_all():
-    """导出全部 4 个 JSON（本地一次性导出用）。"""
+    """导出全部 4 个 JSON（手动一次性导出用）。"""
     export_files(list(PAYLOADS.keys()))
     print("完成：4 个 JSON 文件已写入 docs/data/")
 

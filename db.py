@@ -25,11 +25,11 @@ def init_db():
     cur = conn.cursor()
     cur.executescript(
         """
-        -- 任务1：每日 Trending 快照（每天追加一批，靠 crawl_date 区分是哪天）
+        -- 任务1：每日 Trending   靠 crawl_date 区分
         CREATE TABLE IF NOT EXISTS trending_daily (
             id               INTEGER PRIMARY KEY AUTOINCREMENT,
             crawl_date       TEXT,      -- 采集日期，如 2026-11-21
-            rank             INTEGER,   -- 当日排名（1 开始）
+            rank             INTEGER,   -- 当日排名
             model_id         TEXT,      -- 模型ID，如 tencent/Hy-Embodied-0.5-VLA-RoboTwin
             author           TEXT,      -- 作者
             author_followers INTEGER,   -- 作者粉丝数
@@ -38,7 +38,7 @@ def init_db():
             pipeline_tag     TEXT       -- 模型类型，如 robotics / text-generation
         );
 
-        -- 任务2：具身智能 Top10 大V（个人账号，按 follower_count 排序取）
+        -- 任务2 具身智能 Top10 大V    按 follower_count 排序取
         CREATE TABLE IF NOT EXISTS influencers (
             username        TEXT PRIMARY KEY,
             fullname        TEXT,
@@ -47,12 +47,12 @@ def init_db():
             following_count INTEGER     -- 全网关注总数
         );
 
-        -- 任务2：关注边（有向）：from_user 关注了 to_user
+        -- 任务2 关注边 有向 from_user 关注了 to_user
         CREATE TABLE IF NOT EXISTS follow_edges (
             id        INTEGER PRIMARY KEY AUTOINCREMENT,
             from_user TEXT,
             to_user   TEXT,
-            edge_type TEXT               -- 'follower'（谁关注了大V）或 'following'（大V关注了谁）
+            edge_type TEXT             'follower'或 'following'
         );
 
         -- 任务3：热门具身智能项目
@@ -65,7 +65,7 @@ def init_db():
             likes             INTEGER,
             github_url        TEXT,       -- 提取到的开源 GitHub 链接
             space_url         TEXT,       -- 关联的 HuggingFace Space 链接
-            keywords_matched  TEXT        -- 命中了哪些关键词（逗号分隔）
+            keywords_matched  TEXT        -- 命中了哪些关键词 逗号分隔
         );
         """
     )
@@ -81,7 +81,7 @@ def init_db():
 
 def insert_many(table, rows, replace=True):
     """
-    批量插入 rows（list[dict]）到指定表。
+    批量插入 rows（list[dict]）到指定表
     replace=True 时用 INSERT OR REPLACE（主键冲突则覆盖），
     对 trending_daily 这种「每天都要追加」的表要传 replace=False。
     """

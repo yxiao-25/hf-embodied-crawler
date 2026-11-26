@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 hf_client.py —— HuggingFace 请求层
-所有爬虫都通过这个类发 HTTP 请求，而不是各自写 requests 调用。
+所有爬虫都通过这个类发 HTTP 请求，而不是各自写 requests 调用
 好处：
   1. 统一了站点地址（BASE_URL 只在 config.py 里改一次）
   2. 自动限速（两次请求间隔 >= REQUEST_DELAY，防止被封）
@@ -15,17 +15,17 @@ import config
 
 
 class HFClient:
-    """封装对 HuggingFace 的 GET 请求。"""
+    """封装对 HuggingFace 的 GET 请求"""
 
     def __init__(self):
         self.base_url = config.BASE_URL
-        # Session 会复用底层连接，比每次新建连接更快；统一设置 User-Agent 伪装成浏览器
+        # Session 复用底层连接更快；统一设置 User-Agent 伪装成浏览器
         self.session = requests.Session()
         self.session.headers.update({"User-Agent": "Mozilla/5.0 (compatible; HF-Crawler/1.0)"})
         self._last_request_time = 0.0
 
     def _rate_limit(self):
-        """限速：如果距上次请求还没过 REQUEST_DELAY 秒，就睡到够了再走。"""
+        """限速"""
         elapsed = time.time() - self._last_request_time
         if elapsed < config.REQUEST_DELAY:
             time.sleep(config.REQUEST_DELAY - elapsed)

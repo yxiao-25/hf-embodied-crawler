@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-crawler_influencers.py —— 任务2：具身智能领域 Top10 大V + 关注网络
+crawler_influencers.py —— 任务2 具身智能领域 Top10 大V + 关注网络
 
-用法：
-    python crawler_influencers.py
+
 
 核心逻辑（调用流）：
-    1. collect_candidates  对每个具身智能 pipeline_tag 用 filter 列模型，is_embodied 过滤噪音，
+    1. collect_candidates  对每个具身智能 pipeline_tag 用 filter 列模型 is_embodied 过滤噪音，
        收集「作者」去重
-    2. fetch_user_meta     访问每个作者主页 HTML，提取 fullname / 粉丝数 / 账号类型
+    2. fetch_user_meta     访问每个作者主页 HTML 提取 fullname / 粉丝数 / 账号类型
     3. 只保留个人账号，按粉丝数排序 → Top10 大V
-    4. 关注网络：对这 10 人分别抓 following（出度）+ followers（入度），构成人脉网，
+    4. 关注网络：对这 10 人分别抓 following+ followers 构成人脉网，
        全部边存进 follow_edges（from_user → to_user 表示「from 关注了 to」）
     5. Top10 大V存进 influencers 表，关注边存进 follow_edges 表
 
@@ -18,9 +17,8 @@ crawler_influencers.py —— 任务2：具身智能领域 Top10 大V + 关注�
     - 粉丝总数：/api/users/{name} 接口 404，但主页 HTML 里内嵌 "followerCount":数字，
       用正则从 HTML 提取。
     - 关注列表：个人账号 /api/users/{name}/following 和 /followers 两个接口，
-      分别对应出度（关注了谁）和入度（被谁关注）。
     - 具身智能关键词统一定义在 config.py（config.EMBODIED_PIPELINE_TAGS /
-      config.EMBODIED_TAG_KEYWORDS / config.is_embodied），任务2/任务3 共用。
+      config.EMBODIED_TAG_KEYWORDS / config.is_embodied）任务2/任务3 共用。
 """
 
 import re
@@ -29,14 +27,6 @@ import html as htmlmod
 import config
 import db
 from hf_client import HFClient
-
-
-def extract_cursor(link_header):
-    """从响应头 Link 里提取分页游标 cursor（形如 <...?cursor=xxx>; rel="next"）。"""
-    if not link_header:
-        return None
-    m = re.search(r"cursor=([^&>]+)", link_header)
-    return m.group(1) if m else None
 
 
 def collect_candidates(client):
@@ -106,30 +96,16 @@ def fetch_user_meta(client, username):
 
 def fetch_user_list(client, username, kind, max_items=500):
     """
-    抓某人的 following（出度）或 followers（入度）列表，返回 list[username]。
+    抓某人的 following 或 followers 列表，返回 list[username]。
     kind: 'following' 或 'followers'（只对个人账号有效）。
-    max_items: 最多抓多少个（followers 用它设上限，避免请求爆炸）。
-    每页默认 500 条，分页游标在响应头 Link 的 cursor= 里。
+    HF 这两个接口一次只返回一页、不带分页游标，所以这里只发一次请求；
+    max_items 只作为结果条数上限（防御性截断）。
     """
-    result = []
-    cursor = None
-    while len(result) < max_items:
-        params = {"limit": 100}
-        if cursor:
-            params["cursor"] = cursor
-        try:
-            resp = client.get(f"/api/users/{username}/{kind}", params=params)
-        except RuntimeError:
-            break  # 拿不到就返回已抓到的（可能为空）
-        data = resp.json()
-        for item in data:
-            result.append(item["user"])
-            if len(result) >= max_items:
-                break
-        cursor = extract_cursor(resp.headers.get("Link"))
-        if not cursor:
-            break
-    return result
+    try:
+        resp = client.get(f"/api/users/{username}/{kind}", params={"limit": 100})
+    except RuntimeError:
+        return []  # 拿不到就返回空列表
+    return [item["user"] for item in resp.json()][:max_items]
 
 
 def main():
@@ -142,7 +118,7 @@ def main():
     print(f"    共找到 {len(candidates)} 个候选作者")
 
     # —— 第 2 步：抓粉丝数等元数据（每个候选访问一次主页 HTML）——
-    print("【2/4】逐个抓取粉丝数（这一步要花几分钟，请稍候）...")
+    print("【2/4】逐个抓取粉丝数...")
     metas = []
     total = len(candidates)
     for i, name in enumerate(candidates, 1):
