@@ -4,7 +4,8 @@
     "2026-11-24",
     "2026-11-25",
     "2026-11-26",
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
   ],
   "data": {
     "2026-11-21": [
@@ -1115,6 +1116,228 @@
         "downloads": 6047011,
         "likes": 21882,
         "pipeline_tag": "image-text-to-text"
+      }
+    ],
+    "2026-11-28": [
+      {
+        "id": 201,
+        "crawl_date": "2026-11-28",
+        "rank": 1,
+        "model_id": "thinkingmachines/Inkling-2-Mini",
+        "author": "thinkingmachines",
+        "author_followers": 3887,
+        "downloads": 155741,
+        "likes": 6513,
+        "pipeline_tag": "image-text-to-text"
+      },
+      {
+        "id": 202,
+        "crawl_date": "2026-11-28",
+        "rank": 2,
+        "model_id": "unsloth/Inkling-2-Mini-GGUF",
+        "author": "unsloth",
+        "author_followers": 41310,
+        "downloads": 3302340,
+        "likes": 1626,
+        "pipeline_tag": "image-text-to-text"
+      },
+      {
+        "id": 203,
+        "crawl_date": "2026-11-28",
+        "rank": 3,
+        "model_id": "SulphurAI/Sulphur-3",
+        "author": "SulphurAI",
+        "author_followers": 1198,
+        "downloads": 539421,
+        "likes": 1391,
+        "pipeline_tag": null
+      },
+      {
+        "id": 204,
+        "crawl_date": "2026-11-28",
+        "rank": 4,
+        "model_id": "prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+        "author": "prism-ml",
+        "author_followers": 4936,
+        "downloads": 382546,
+        "likes": 654,
+        "pipeline_tag": "text-generation"
+      },
+      {
+        "id": 205,
+        "crawl_date": "2026-11-28",
+        "rank": 5,
+        "model_id": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+        "author": "AtomicChat",
+        "author_followers": 1845,
+        "downloads": 1059763,
+        "likes": 1049,
+        "pipeline_tag": "image-text-to-text"
+      },
+      {
+        "id": 206,
+        "crawl_date": "2026-11-28",
+        "rank": 6,
+        "model_id": "inworld/voice-isolator",
+        "author": "inworld",
+        "author_followers": 604,
+        "downloads": 20510,
+        "likes": 1018,
+        "pipeline_tag": "audio-to-audio"
+      },
+      {
+        "id": 207,
+        "crawl_date": "2026-11-28",
+        "rank": 7,
+        "model_id": "Lightricks/LTX-2.5",
+        "author": "Lightricks",
+        "author_followers": 7093,
+        "downloads": 3080701,
+        "likes": 13757,
+        "pipeline_tag": "image-to-video"
+      },
+      {
+        "id": 208,
+        "crawl_date": "2026-11-28",
+        "rank": 8,
+        "model_id": "llamaindex/OCRia-nano-1",
+        "author": "llamaindex",
+        "author_followers": 439,
+        "downloads": 626,
+        "likes": 368,
+        "pipeline_tag": "image-to-text"
+      },
+      {
+        "id": 209,
+        "crawl_date": "2026-11-28",
+        "rank": 9,
+        "model_id": "nvidia/Nemotron-Labs-Image-30B-A3B",
+        "author": "nvidia",
+        "author_followers": 77323,
+        "downloads": 1692,
+        "likes": 347,
+        "pipeline_tag": "text-to-image"
+      },
+      {
+        "id": 210,
+        "crawl_date": "2026-11-28",
+        "rank": 10,
+        "model_id": "ISTA-DASLab/Inkling-2-Mini-GSQ-RCO-GGUF",
+        "author": "ISTA-DASLab",
+        "author_followers": 3304,
+        "downloads": 24931,
+        "likes": 297,
+        "pipeline_tag": "text-generation"
+      },
+      {
+        "id": 211,
+        "crawl_date": "2026-11-28",
+        "rank": 11,
+        "model_id": "strata-engine/Inkling-2-Mini-Strata",
+        "author": "strata-engine",
+        "author_followers": 292,
+        "downloads": 4532,
+        "likes": 311,
+        "pipeline_tag": "image-text-to-text"
+      },
+      {
+        "id": 212,
+        "crawl_date": "2026-11-28",
+        "rank": 12,
+        "model_id": "sand-ai/MAGI-2-preview",
+        "author": "sand-ai",
+        "author_followers": 491,
+        "downloads": 0,
+        "likes": 377,
+        "pipeline_tag": "image-text-to-video"
+      },
+      {
+        "id": 213,
+        "crawl_date": "2026-11-28",
+        "rank": 13,
+        "model_id": "apple/DepthPro2",
+        "author": "apple",
+        "author_followers": 8760,
+        "downloads": 0,
+        "likes": 1369,
+        "pipeline_tag": "depth-estimation"
+      },
+      {
+        "id": 214,
+        "crawl_date": "2026-11-28",
+        "rank": 14,
+        "model_id": "kandinskylab/Kandinsky-ImageSR-2.0",
+        "author": "kandinskylab",
+        "author_followers": 522,
+        "downloads": 582,
+        "likes": 208,
+        "pipeline_tag": "image-to-image"
+      },
+      {
+        "id": 215,
+        "crawl_date": "2026-11-28",
+        "rank": 15,
+        "model_id": "baidu/ERNIE-5.5-Flash-Preview",
+        "author": "baidu",
+        "author_followers": 4563,
+        "downloads": 2609,
+        "likes": 394,
+        "pipeline_tag": "text-generation"
+      },
+      {
+        "id": 216,
+        "crawl_date": "2026-11-28",
+        "rank": 16,
+        "model_id": "Qwen/Qwen3.8-27B",
+        "author": "Qwen",
+        "author_followers": 118552,
+        "downloads": 5752506,
+        "likes": 21947,
+        "pipeline_tag": "image-text-to-text"
+      },
+      {
+        "id": 217,
+        "crawl_date": "2026-11-28",
+        "rank": 17,
+        "model_id": "Lakonik/pi-H3",
+        "author": "Lakonik",
+        "author_followers": 101,
+        "downloads": 97525,
+        "likes": 371,
+        "pipeline_tag": "image-text-to-video"
+      },
+      {
+        "id": 218,
+        "crawl_date": "2026-11-28",
+        "rank": 18,
+        "model_id": "Sentinel7/h3",
+        "author": "Sentinel7",
+        "author_followers": 627,
+        "downloads": 0,
+        "likes": 2267,
+        "pipeline_tag": null
+      },
+      {
+        "id": 219,
+        "crawl_date": "2026-11-28",
+        "rank": 19,
+        "model_id": "inclusionAI/Ling-3.2-air",
+        "author": "inclusionAI",
+        "author_followers": 4238,
+        "downloads": 2403,
+        "likes": 309,
+        "pipeline_tag": null
+      },
+      {
+        "id": 220,
+        "crawl_date": "2026-11-28",
+        "rank": 20,
+        "model_id": "orcarouter/Inkling-2-Mini-abliterated-GGUF",
+        "author": "orcarouter",
+        "author_followers": 4375,
+        "downloads": 21019,
+        "likes": 345,
+        "pipeline_tag": "text-generation"
       }
     ]
   }
